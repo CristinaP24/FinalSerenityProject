@@ -73,7 +73,7 @@ public class ReviewSteps extends ScenarioSteps {
     public void clickBackButtonInvalidReview (){reviewPage.backButtonInvalidReview();}
 
     @Step
-    public void errorMessageReviewStrong (){reviewPage.errorMessageReviewStrong(equals(true));}
+    public void errorMessageReviewStrong (){reviewPage.errorMessageReviewStrong();}
 
     @Step
     public void ifCheckSpaceReview (){reviewPage.ifCheckSpaceReview();}

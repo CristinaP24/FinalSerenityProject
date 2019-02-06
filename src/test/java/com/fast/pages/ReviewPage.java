@@ -73,7 +73,7 @@ public class ReviewPage extends PageObject {
 
     public void clickReviewButton (){clickOn(clickReviewButton);}
 
-    public boolean errorMessageReviewStrong(boolean equals)
+    public boolean errorMessageReviewStrong()
     {waitFor(errorMessageReviewStrong);
     return errorMessageReviewStrong.containsText("ERROR: please type a comment.");
     }
@@ -95,7 +95,7 @@ public class ReviewPage extends PageObject {
 
     public void ifCheckSpaceReview (){
 
-        if ((Boolean) errorMessageReviewStrong(equals(true))) { //de corectat
+        if (errorMessageReviewStrong()) { //de corectat
             backButtonInvalidReview();
         }
     }
