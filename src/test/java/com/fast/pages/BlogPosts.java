@@ -1,4 +1,10 @@
 package com.fast.pages;
 
-public class BlogPosts {
+import net.thucydides.core.annotations.DefaultUrl;
+import net.thucydides.core.pages.PageObject;
+
+@DefaultUrl("http://qa3.fasttrackit.org:8008/blog")
+
+public class BlogPosts extends PageObject {
+
 }

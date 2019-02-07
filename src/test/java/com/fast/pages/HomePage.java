@@ -19,6 +19,9 @@ public class HomePage extends PageObject {
         clickOn(myAccountButton);
     }
 
+
+
+
     //public void clickLoginLink(){
        // clickOn(logInLink);
     }

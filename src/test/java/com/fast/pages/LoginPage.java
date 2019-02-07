@@ -12,6 +12,7 @@ public class LoginPage extends PageObject {
     @FindBy (css = "[id^='username']")
     private WebElementFacade emailField;
 
+
     @FindBy(css = "[id^='password']")
     private WebElementFacade passwordField;
 
@@ -34,18 +35,16 @@ public class LoginPage extends PageObject {
         typeInto(emailField, "swajhduuenuztwyxrlrylepcdwfcjwbdvgtnoyvjedktyjvtyxjhtizwhlkrzbmojmtqgvjjbapisfvsusnvcxrgfxpfcmkolrtjzuogfjsdsimnbflqmixvnozyyuepzuitgugteovwezrdrlleobanfjrrepjpuwmhcqzfsujqqvztsfykvnqdaikacrostpnkjkonosrfbefsplluybtsluqkpstbylykfnhjuzgljranmgiprlfqmwkdwxqze@gmail.com");
     }
 
-    public void setPasswordField() {
+    public void setPasswordField()
+    {
         typeInto(passwordField, "notamuggle77");
     }
 
-    public void clickLoginButton() {
+    public void clickLoginButton()
+    {
         clickOn(loginButton);
     }
 
-   public void validLogin (){
-
-
-   }
 
 }
 
