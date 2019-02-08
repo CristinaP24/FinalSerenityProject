@@ -8,7 +8,7 @@ import net.thucydides.core.pages.PageObject;
 @DefaultUrl("http://qa3.fasttrackit.org:8008/my-account")
 public class LoginPage extends PageObject {
 
-    //@FindBy(css = "[name*='username']")
+
     @FindBy (css = "[id^='username']")
     private WebElementFacade emailField;
 
