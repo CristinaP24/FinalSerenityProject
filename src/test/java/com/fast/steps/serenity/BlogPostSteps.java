@@ -43,6 +43,17 @@ public void confirmLoginBlogMessage (){
     public void logutAtWordinComment (){
         blogPostPage.logutAtWordinComment();
     }
+
+    @Step
+    public void typeCommentBlogFieldPups (){
+        blogPostPage.typeCommentBlogFieldPups();
+    }
+
+    @Step
+    public void typeCommentBlogFieldpups (){
+        blogPostPage.typeCommentBlogFieldpups();
+    }
+
 @StepGroup
     public void logoutAtWordInComment (){
         validLogin();
@@ -52,7 +63,15 @@ public void confirmLoginBlogMessage (){
         confirmLoginBlogMessage();
         logutAtWordinComment();
 }
-
+    @StepGroup
+    public void logoutAtWordInComment_pups (){
+        validLogin();
+        clickBlogButton();
+        typeCommentBlogFieldpups();
+        clickPostBlogCommentButton();
+        confirmLoginBlogMessage();
+        logutAtWordinComment();
+    }
 
 
 

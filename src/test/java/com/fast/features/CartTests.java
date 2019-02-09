@@ -1,6 +1,8 @@
 package com.fast.features;
 
+import com.fast.pages.HomePage;
 import com.fast.steps.serenity.CartSteps;
+import com.fast.steps.serenity.CheckoutSteps;
 import com.fast.steps.serenity.LoginSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -17,6 +19,7 @@ public class CartTests {
 
     @Steps
     CartSteps cartSteps;
+
     @Test
     public void addProductCartWithoutLogIn () {
         cartSteps.navigateToHomepage();
@@ -33,4 +36,17 @@ public class CartTests {
         cartSteps.addToCartButton_10000();
         cartSteps.clickAddToCartButton();
     }
+    @Test
+    public void checkQtyCartIf (){
+        cartSteps.navigateToHomepage();
+        cartSteps.clickOnShopButton();
+        cartSteps.viewCapProduct();
+        cartSteps.click3QtyBox();
+        cartSteps.clickAddToCartButton();
+        cartSteps.shoppingCartIcon();
+        cartSteps.checkQtyCartIf();
+        cartSteps.proceedToCheckoutButton();
+
+    }
+
 }

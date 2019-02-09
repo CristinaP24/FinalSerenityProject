@@ -11,6 +11,12 @@ public class CartPage extends PageObject {
     @FindBy (css = "a[href*='shop']")
     private WebElementFacade shopButton;
 
+    @FindBy (className = "wc-proceed-to-checkout")
+    private WebElementFacade proceedToCheckoutButton;
+
+    @FindBy (css = "button[name*='update_cart']")
+    private WebElementFacade updateCartButton;
+
     @FindBy (css = "a[href*='add-to-cart=48']")
     private WebElementFacade addToCartBeanieProduct;
 
@@ -26,8 +32,28 @@ public class CartPage extends PageObject {
     @FindBy (css = "[name*='add-to-cart']")
     private WebElementFacade addToCartButton;
 
-    @FindBy (css = " button wc-forward")
+    @FindBy (css = "button wc-forward")
     private WebElementFacade viewCartButton;
+
+    @FindBy (css = "a[title*='View your shopping cart']")
+    private WebElementFacade shoppingcartIcon;
+
+
+    @FindBy (css = ".product-price .amount")
+    private WebElementFacade productPriceShown;
+
+    @FindBy (css = "input[id*='quantity']")
+    private  WebElementFacade quantityBoxShown;
+
+    @FindBy (css = " .product-subtotal .amount")
+    private WebElementFacade productTotalUp;
+
+    @FindBy (css = ".cart-subtotal .amount")
+    private WebElementFacade cartSubtotal;
+
+    @FindBy (css = ".order-total .amount")
+    private WebElementFacade orderTotal;
+
 
 
     public void clickOnShopButton (){ clickOn(shopButton); }
@@ -38,11 +64,60 @@ public class CartPage extends PageObject {
 
     public void viewCapProduct (){clickOn(viewCapProduct);}
 
-    public void clickQtyBox (){clickOn(clickQtyBox);}
+    public void proceedToCheckoutButton (){
+        clickOn(proceedToCheckoutButton);
+    waitABit(6000);}
+
+    public void shoppingCartIcon (){clickOn(shoppingcartIcon);}
+
+    public void updateCartButton (){clickOn(updateCartButton);}
+
+    public void click3QtyBox ()
+    {clickOn(clickQtyBox);
+    typeInto(clickQtyBox, "3");}
 
     public void addToCartButton_10000 ()
     {clickOn(clickQtyBox);
     typeInto(clickQtyBox, "-10000");}
 
-    public void clickAddtoCartButton () {clickOn(addToCartButton);}
+    public void clickQtyBox (){
+        clickOn(clickQtyBox);
+    }
+
+    public void clickAddtoCartButton ()
+    {   waitFor(addToCartButton);
+        clickOn(addToCartButton);}
+
+    public void viewCartButton (){clickOn(viewCartButton);}
+
+    public void checkQtyCartIf (){
+
+        String price =  productPriceShown.getText().trim();
+        String priceFin = price.replace(",", "").replace(" lei", "");
+        int priceX = Integer.valueOf(priceFin); //scoate valoare int din strig
+
+        String priceTotalUp = productTotalUp.getText().trim();
+        String priceFinTotalUp = priceTotalUp.replace(",", "").replace(" lei", "");
+        int priceY = Integer.valueOf(priceFinTotalUp);
+
+        String priceCartSubtotal = cartSubtotal.getText().trim();
+        String priceFinCartSubtotal = priceCartSubtotal.replace(",", "").replace(" lei", "");
+        int priceZ = Integer.valueOf(priceFinCartSubtotal);
+
+
+        String qtyBox = quantityBoxShown.getValue();
+        int qtyBoxConvert = Integer.valueOf(qtyBox);
+
+        int subtotal = priceX * qtyBoxConvert;
+
+        if ((subtotal==priceZ)&&(priceY==subtotal)&&(priceZ==priceY)){
+            System.out.println("Mergi, mai!");
+            //clickOn(proceedToCheckoutButton);
+        }
+   }
+
+
+
+
 }
+

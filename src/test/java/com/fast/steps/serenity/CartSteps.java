@@ -12,6 +12,9 @@ public class CartSteps extends ScenarioSteps {
     CartPage cartPage;
 
     @Step
+    public void clickHomePageButton (){homePage.homePageButton();}
+
+    @Step
     public void navigateToHomepage(){
         homePage.open();
     }
@@ -38,6 +41,28 @@ public class CartSteps extends ScenarioSteps {
     public void clickAddToCartButton ()
     {cartPage.clickAddtoCartButton();}
 
+    @Step
+    public void click3QtyBox (){
+        cartPage.click3QtyBox();
+    }
+    @Step
+    public void proceedToCheckoutButton (){
+        cartPage.proceedToCheckoutButton();
+    }
+
+    @Step
+    public void checkQtyCartIf (){
+        cartPage.checkQtyCartIf();
+    }
+
+    @Step
+    public void  viewCartButton (){
+        cartPage.viewCartButton();
+    }
+    @Step
+    public void shoppingCartIcon (){
+        cartPage.shoppingCartIcon();
+    }
     @StepGroup
     public void addProductCartWithoutLogIn (){
         navigateToHomepage();
@@ -54,6 +79,7 @@ public class CartSteps extends ScenarioSteps {
         clickQtyBox();
         addToCartButton_10000();
         clickAddToCartButton();
-
     }
+
+
 }

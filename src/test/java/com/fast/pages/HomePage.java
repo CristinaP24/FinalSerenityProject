@@ -13,12 +13,17 @@ public class HomePage extends PageObject {
     @FindBy(css = "#menu-item-1730")
     private WebElementFacade myAccountButton;
 
+    @FindBy (css = "li[id*='menu-item-1642']")
+    private WebElementFacade homePageButton;
+
 
     public void clickMyAccountButton(){
         withTimeoutOf(15, TimeUnit.SECONDS).waitFor(myAccountButton);
         clickOn(myAccountButton);
     }
-
+public void homePageButton (){
+        clickOn(homePageButton);
+}
 
 
 

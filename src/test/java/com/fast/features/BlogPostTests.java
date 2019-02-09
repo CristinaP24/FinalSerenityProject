@@ -26,6 +26,15 @@ public class BlogPostTests {
     blogPostSteps.logutAtWordinComment();
 }
 
+@Test
+    public void logoutAtWordInComment_pups () {
+    blogPostSteps.validLogin();
+    blogPostSteps.clickBlogButton();
+    blogPostSteps.typeCommentBlogFieldpups();
+    blogPostSteps.clickPostBlogCommentButton();
+    blogPostSteps.confirmLoginBlogMessage();
+    blogPostSteps.logutAtWordinComment();
+}
 
 
 

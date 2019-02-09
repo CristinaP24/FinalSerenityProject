@@ -45,6 +45,13 @@ public class LoginPage extends PageObject {
         clickOn(loginButton);
     }
 
+   //generare string
 
-}
+
+
+    }
+
+
+
+
 

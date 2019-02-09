@@ -45,7 +45,7 @@ public class BlogPostPage extends PageObject {
     }
 
     public void typeCommentBlogField() {
-        typeInto(commentBlogField, "Puppie, puppie, puppie is forever!");
+        typeInto(commentBlogField, "3 Puppies");
     }
 
     public void typeCommentBlogFieldPups (){typeInto(commentBlogField, "Pups, just nice Pups.");}
@@ -86,7 +86,7 @@ public class BlogPostPage extends PageObject {
 
     public void logutAtWordinComment() {
 
-        if (commentBlogField.getText().contains("Puppie"))
+        if (commentBlogField.getText().contains("Puppies 3")) //de verificat
             clickOn(logoutRedirectLink);
         else if (commentBlogField.getText().contains("puppie")) {
             clickOn(logoutRedirectLink);
@@ -94,8 +94,8 @@ public class BlogPostPage extends PageObject {
             clickOn(logoutRedirectLink);
         } else if (commentBlogField.getText().contains("pups")) {
             clickOn(logoutRedirectLink);
-
-
         }
+
+
     }
 }
