@@ -8,65 +8,60 @@ import net.thucydides.core.steps.ScenarioSteps;
 import org.junit.Assert;
 
 public class AdminDashboardSteps extends ScenarioSteps {
-   HomePage homePage;
-   MyAccountAdminPage myAccountAdminPage;
-   AdminDashboardPage adminDashboardPage;
+    HomePage homePage;
+    MyAccountAdminPage myAccountAdminPage;
+    AdminDashboardPage adminDashboardPage;
 
-   @Step
-    public void validAdminLogin (){
-       homePage.open();
-       myAccountAdminPage.clickOnmyAccountButton();
-       myAccountAdminPage.enterAdminUsername();
-       myAccountAdminPage.enterAdminPassword();
-       myAccountAdminPage.clickLogInButton();
-   }
-
-   @Step
-    public boolean checkLoggedInAdmin (){
-       Assert.assertTrue(myAccountAdminPage.checkLoggedInAdmin());
-       return true;
-   }
-
-   @Step
-    public void selectDashboardRootMenu (){
-       adminDashboardPage.selectDashboardRootMenu();
-   }
-@Step
-public void setClickAdminRootMenu (){
-       adminDashboardPage.setClickAdminRootMenu();
-}
     @Step
-    public void clickWooCommerceCateg (){
-       adminDashboardPage.clickWooCommerceCateg();
-   }
+    public void validAdminLogin() {
+        homePage.open();
+        myAccountAdminPage.clickOnmyAccountButton();
+        myAccountAdminPage.enterAdminUsername();
+        myAccountAdminPage.enterAdminPassword();
+        myAccountAdminPage.clickLogInButton();
+    }
 
-   @Step
-    public void selectOrdersDropDown (){
-       adminDashboardPage.selectOrdersDropDown();
-   }
+    @Step
+    public boolean checkLoggedInAdmin() {
+        Assert.assertTrue(myAccountAdminPage.checkLoggedInAdmin());
+        return true;
+    }
 
-   @Step
-    public void selectFirst5Orders (){
-       adminDashboardPage.selectFirst5Orders();
-   }
+    @Step
+    public void selectDashboardRootMenu() {
+        adminDashboardPage.selectDashboardRootMenu();
+    }
 
-   @Step
-    public void selectBulkActionDropdown (){
-     adminDashboardPage.selectBulkActionDropdown();
-   }
-   @Step
-    public void selectStatusOnHold (){
-       adminDashboardPage.selectStatusOnHold();
-   }
-   @Step
-   public void applyButton (){
-       adminDashboardPage.applyButton();
-   }
+    @Step
+    public void setClickAdminRootMenu() {
+        adminDashboardPage.setClickAdminRootMenu();
+    }
 
-   @Step
-    public boolean checkOnHoldStatusChangeMessage (){
-       Assert.assertTrue(adminDashboardPage.checkStatusChangeMessage());
-       return true;
-   }
+    @Step
+    public void clickWooCommerceCateg() {
+        adminDashboardPage.clickWooCommerceCateg();
+    }
+
+    @Step
+    public void selectOrdersDropDown() {
+        adminDashboardPage.selectOrdersDropDown();
+    }
+
+    @Step
+    public void selectFirst5Orders() {
+        adminDashboardPage.selectFirst5Orders();
+    }
+
+
+    @Step
+    public void applyButton() {
+        adminDashboardPage.applyButton();
+    }
+
+    @Step
+    public boolean checkOnHoldStatusChangeMessage() {
+        Assert.assertTrue(adminDashboardPage.checkStatusChangeMessage());
+        return true;
+    }
 
 }

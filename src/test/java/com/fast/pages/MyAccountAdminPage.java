@@ -30,7 +30,6 @@ public class MyAccountAdminPage extends PageObject {
 
 
     public void enterAdminUsername () {
-        waitABit(3000);
         typeInto(UsernameAdmin, "admin");}
 
     public void enterAdminPassword() {
@@ -39,7 +38,6 @@ public class MyAccountAdminPage extends PageObject {
 
     public void clickLogInButton (){
         clickOn(loginButton);
-        waitABit(3000);
     }
 
     public boolean checkLoggedInAdmin(){
