@@ -17,83 +17,101 @@ public class ReviewPage extends PageObject {
     @FindBy(css = "[name^='login']")
     private WebElementFacade loginButton;
 
-    @FindBy (css = "a[href*='shop']")
+    @FindBy(css = "a[href*='shop']")
     private WebElementFacade shopButton;
 
-    @FindBy (css ="a[href*='belt']" )
+    @FindBy(css = "a[href*='belt']")
     private WebElementFacade viewBeltProduct;
 
-    @FindBy (css="a[href*='product/cap']")
+    @FindBy(css = "a[href*='product/cap']")
     private WebElementFacade viewCapProduct;
 
-    @FindBy (css = "a[href*='#tab-reviews']")
+    @FindBy(css = "a[href*='#tab-reviews']")
     private WebElementFacade clickReviewButton;
 
-    @FindBy (css = "a[class*='star-3']")
+    @FindBy(css = "a[class*='star-3']")
     private WebElementFacade star2RatingProduct;
 
-    @FindBy (css = "a[class*='star-3']")
+    @FindBy(css = "a[class*='star-3']")
     private WebElementFacade star3RatingProduct;
 
 
-    @FindBy (css = "textarea[id*='comment']")
+    @FindBy(css = "textarea[id*='comment']")
     private WebElementFacade clickTextBoxReview;
 
-    @FindBy (css = "input[value*='Submit']")
+    @FindBy(css = "input[value*='Submit']")
     private WebElementFacade clickSubmitButtonReview;
 
-    @FindBy (css = "a[href*='history.back']")
+    @FindBy(css = "a[href*='history.back']")
     private WebElementFacade backButtonInvalidReview;
 
     @FindBy(css = "p>strong")
     private WebElementFacade errorMessageReviewStrong;
 
-    public void setEmailField(){
+    public void setEmailField() {
         waitFor(emailField);
-        typeInto(emailField,"hermioneg@gmail.com");
+        typeInto(emailField, "hermioneg@gmail.com");
     }
 
-    public void setPasswordField(){
+    public void setPasswordField() {
         typeInto(passwordField, "notamuggle77");
     }
 
-    public void clickLoginButton(){
+    public void clickLoginButton() {
         clickOn(loginButton);
     }
 
-    public void clickOnShopButton (){ clickOn(shopButton); }
-
-    public void viewBeltProduct (){ clickOn(viewBeltProduct);}
-
-    public void viewCapProduct (){ clickOn(viewCapProduct);}
-
-    public void clickStar3RatingProduct (){clickOn(star3RatingProduct);}
-
-    public void clickStar2RatingProduct (){clickOn(star2RatingProduct);}
-
-    public void clickReviewButton (){clickOn(clickReviewButton);}
-
-    public boolean errorMessageReviewStrong()
-    {waitFor(errorMessageReviewStrong);
-    return errorMessageReviewStrong.containsText("ERROR: please type a comment.");
+    public void clickOnShopButton() {
+        clickOn(shopButton);
     }
 
-    public void addValidReview ()
-    {clickOn(clickTextBoxReview);
-    typeInto(clickTextBoxReview, "This review will matter as much as what you ate for breakfast two days ago.");}
+    public void viewBeltProduct() {
+        clickOn(viewBeltProduct);
+    }
+
+    public void viewCapProduct() {
+        clickOn(viewCapProduct);
+    }
+
+    public void clickStar3RatingProduct() {
+        clickOn(star3RatingProduct);
+    }
+
+    public void clickStar2RatingProduct() {
+        clickOn(star2RatingProduct);
+    }
+
+    public void clickReviewButton() {
+        clickOn(clickReviewButton);
+    }
+
+    public boolean errorMessageReviewStrong() {
+        waitFor(errorMessageReviewStrong);
+        return errorMessageReviewStrong.containsText("ERROR: please type a comment.");
+    }
+
+    public void addValidReview() {
+        clickOn(clickTextBoxReview);
+        typeInto(clickTextBoxReview, "This review will matter as much as what you ate for breakfast two days ago.");
+    }
 
 
-    public void addSpaceReview ()
-    {clickOn(clickTextBoxReview);
-        typeInto(clickTextBoxReview, "  ");}
+    public void addSpaceReview() {
+        clickOn(clickTextBoxReview);
+        typeInto(clickTextBoxReview, "  ");
+    }
 
 
-    public void clickSubmitButtonReview() {clickOn(clickSubmitButtonReview);}
+    public void clickSubmitButtonReview() {
+        clickOn(clickSubmitButtonReview);
+    }
 
-    public void backButtonInvalidReview () {clickOn(backButtonInvalidReview);}
+    public void backButtonInvalidReview() {
+        clickOn(backButtonInvalidReview);
+    }
 
 
-    public void ifCheckSpaceReview (){
+    public void ifCheckSpaceReview() {
 
         if (errorMessageReviewStrong()) { //de corectat
             backButtonInvalidReview();

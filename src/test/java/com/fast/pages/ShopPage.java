@@ -4,6 +4,7 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
+import org.openqa.selenium.By;
 
 
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.List;
 
 public class ShopPage extends PageObject {
 
-    @FindBy (css = "li a[href*='shop']")
+    @FindBy(css = "li a[href*='shop']")
     private WebElementFacade clickOnShopButtonMainMenu;
 
     @FindBy(css = "post-48 product type-product status-publish has-post-thumbnail product_cat-accessories-clothing  instock sale shipping-taxable purchasable product-type-simple")
@@ -71,30 +72,36 @@ public class ShopPage extends PageObject {
     @FindBy(css = "aside form")
     private WebElementFacade searchBarLateral;
 
-    @FindBy(className = ".product")
+    @FindBy(css = ".product")
     List<WebElementFacade> listProductsPage1;
 
-    public void clickOnShopButtonMainMenu (){
+    public void clickOnShopButtonMainMenu() {
         clickOn(clickOnShopButtonMainMenu);
     }
 
-
-    public void selectBeltForProduct() {
+    public boolean selectBeltForProduct() {
         for (WebElementFacade product : listProductsPage1) {
-            if (product.getText().contains("Belt"))
-                clickOn(product);
+            if (product.getText().contains("Belt")){
+                product.findElement(By.cssSelector("img")).click();
+            return true;
         }
     }
+    return false;
+}
 
-    public void selectHoodieElseProduct() {
+    public boolean selectHoodieElseProduct() {
         for (WebElementFacade product : listProductsPage1) {
             if (product.getText().contains("Octopus is not on this page."))
                 clickOn(product);
+
             else {
-                product.getText().contains("Hoodie with Zipper");
+                product.getText().contains("Zipper");
+                System.out.println("y work?");
                 clickOn(product);
             }
+            return true;
         }
+        return false;
     }
 
     public void selectCapElseIfProduct() {
@@ -117,8 +124,7 @@ public class ShopPage extends PageObject {
     }
 
 
-
-        public void selectIndex3OfProduct () {
+        public void selectIndex3OfProduct () {//de sters
         listProductsPage1.add(viewAlbumProduct);
         listProductsPage1.add(readMore_AtmBWycWProduct);
         listProductsPage1.add(viewtBeanieProduct);
@@ -135,7 +141,8 @@ public class ShopPage extends PageObject {
         listProductsPage1.add(view_hoodieWithLogoProduct);
         listProductsPage1.add(view_hoodieWithZipperProduct);
         listProductsPage1.add(view_huwaxbto_Product);
-        listProductsPage1.get(3);//de corectat
+        listProductsPage1.get(3);
+
             }
 
             public void clickOnBeanieWithLogoProduct () {

@@ -93,10 +93,10 @@ public class CheckoutSteps extends ScenarioSteps {
         @Step
         public boolean ifCheckPhoneTksMessage (){
 
-            if ((checkErrorPhoneMessageBilling()&& (checkErrorCountryMessageBilling())==true)){
+            if (((checkErrorPhoneMessageBilling()&& (checkErrorCountryMessageBilling())))){
                 return checkoutThanksMessagecheck();
             }
-            return true;
+            return false;
         }
 
 

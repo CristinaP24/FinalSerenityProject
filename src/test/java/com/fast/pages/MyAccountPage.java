@@ -61,6 +61,20 @@ public void enterEmailMyAccountField(){
         return passwordMyAccountField.containsText("notamuggle77");
     }
 
+    public boolean checkRegisterValid(){
+        waitFor(welcomeMessageStrong);
+        return welcomeMessageStrong.containsText("Hello hermioneg (not hermioneg? Log out)");
+    }
+
+
+
+    public boolean checkRegister(String username){ //pt mine sa verific
+        waitFor(welcomeMessageStrong);
+        System.out.println(welcomeMessageStrong.getText());
+        return welcomeMessageStrong.containsText("Hello " + username);
+    }
+
+
      }
 
 

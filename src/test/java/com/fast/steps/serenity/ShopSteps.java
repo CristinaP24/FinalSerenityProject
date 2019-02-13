@@ -8,6 +8,7 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.junit.Assert;
 
 public class ShopSteps extends ScenarioSteps {
 
@@ -29,7 +30,7 @@ public class ShopSteps extends ScenarioSteps {
 }
 @Step
     public void selectBeltForProduct (){
-    shopPage.selectBeltForProduct();
+    Assert.assertTrue(shopPage.selectBeltForProduct());
 }
 
 @Step
@@ -63,12 +64,12 @@ public void selectHoodieElseProduct (){
    }
 
 
-    @StepGroup
-    public void selectBeltFromList (){
-    validLogin();
-    clickOnShopButtonMainMenu();
-    selectBeltForProduct();
-  }
+//    @StepGroup
+//    public void selectBeltFromList (){
+//    validLogin();
+//    clickOnShopButtonMainMenu();
+//    selectBeltForProduct();
+//  }
 
    @StepGroup
     public void selectHoodieIfElseProduct (){

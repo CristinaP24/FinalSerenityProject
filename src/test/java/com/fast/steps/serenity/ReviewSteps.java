@@ -10,8 +10,8 @@ public class ReviewSteps extends ScenarioSteps {
     HomePage homePage;
     LoginPage loginPage;
     MyAccountPage myAccountPage;
-    CartPage cartPage;
     ReviewPage reviewPage;
+
     @Step
     public void navigateToHomepage() {
         homePage.open();

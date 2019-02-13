@@ -20,7 +20,7 @@ public class ShopTests  {
 public void selectBeltForList (){
     shopSteps.validLogin();
     shopSteps.clickOnShopButtonMainMenu();
-    shopSteps.selectBeltFromList();
+    shopSteps.selectBeltForProduct();
 }
 @Test
     public void selectHoodieElseProduct (){
