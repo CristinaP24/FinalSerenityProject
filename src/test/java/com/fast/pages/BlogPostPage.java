@@ -33,7 +33,7 @@ public class BlogPostPage extends PageObject {
     @FindBy(css = "a[href*='back']")
     private WebElementFacade backBlogButton;
 
-    @FindBy (css = "a[href*='wp-admin/profile']")
+    @FindBy(css = "a[href*='wp-admin/profile']")
     private WebElementFacade confirmLoginBlogMessage;
 
     @FindBy(css = "a[href*='logout&redirect']")
@@ -48,9 +48,13 @@ public class BlogPostPage extends PageObject {
         typeInto(commentBlogField, "3 Puppies");
     }
 
-    public void typeCommentBlogFieldPups (){typeInto(commentBlogField, "Pups, just nice Pups.");}
+    public void typeCommentBlogFieldPups() {
+        typeInto(commentBlogField, "Pups, just nice Pups.");
+    }
 
-    public void typeCommentBlogFieldpups (){typeInto(commentBlogField, "pups are my favourite pets");}
+    public void typeCommentBlogFieldpups() {
+        typeInto(commentBlogField, "pups are my favourite pets");
+    }
 
     public void typeNameBlogField() {
         typeInto(nameBlogField, "Whaterver Name It Is");
@@ -62,6 +66,7 @@ public class BlogPostPage extends PageObject {
 
     public void clickPostBlogCommentButton() {
         clickOn(postBlogCommentButton);
+        waitABit(3000);
     }
 
     public boolean confirmBlogCommentMessage() {
@@ -84,18 +89,23 @@ public class BlogPostPage extends PageObject {
         clickOn(backBlogButton);
     }
 
-    public void logutAtWordinComment() {
+    public boolean logutAtWordinComment() {
 
-        if (commentBlogField.getText().contains("Puppies 3")) //de verificat
+        if (commentBlogField.getText().contains("Puppies 3")) { //de verificat
             clickOn(logoutRedirectLink);
-        else if (commentBlogField.getText().contains("puppie")) {
+            return true;
+        } else if (commentBlogField.getText().contains("puppie")) {
             clickOn(logoutRedirectLink);
+            return true;
         } else if (commentBlogField.getText().contains("Pups")) {
             clickOn(logoutRedirectLink);
+            return true;
         } else if (commentBlogField.getText().contains("pups")) {
             clickOn(logoutRedirectLink);
+            return true;
         }
-
-
+    return false;
     }
+
+
 }

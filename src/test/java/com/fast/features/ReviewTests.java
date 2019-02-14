@@ -35,7 +35,6 @@ public class ReviewTests  {
     public void invalidSpaceReview (){
         reviewSteps.navigateToHomepage();
         reviewSteps.goToLogin();
-        reviewSteps.clickPasswordMyAccountField();
         reviewSteps.setUser();
         reviewSteps.setPassword();
         reviewSteps.clickLoginButton();
@@ -43,8 +42,8 @@ public class ReviewTests  {
         reviewSteps.viewCapProduct();
         reviewSteps.clickReviewButton();
         reviewSteps.clickStar2RatingProduct();
+        reviewSteps.clickSubmitButtonReview();
         reviewSteps.ifCheckSpaceReview();
-        reviewSteps.clickSubmitReviewButton();
 
     }
 }

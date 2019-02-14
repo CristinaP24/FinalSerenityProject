@@ -5,11 +5,13 @@ import com.fast.pages.HomePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.junit.Assert;
 
 public class CartSteps extends ScenarioSteps {
 
     HomePage homePage;
     CartPage cartPage;
+
 
     @Step
     public void clickHomePageButton (){homePage.homePageButton();}
@@ -56,13 +58,26 @@ public class CartSteps extends ScenarioSteps {
     }
 
     @Step
-    public void  viewCartButton (){
+    public void viewCartButton (){
         cartPage.viewCartButton();
     }
+
+
     @Step
-    public void shoppingCartIcon (){
-        cartPage.shoppingCartIcon();
+    public void removeProductFromCart ()
+    {cartPage.removeProductFromCart();}
+
+
+    @Step
+    public void removeProductCartConfirm (){
+        Assert.assertTrue(cartPage.removeProductCartConfirm());
     }
+
+    @Step
+    public void checkoutHomePageButton (){
+        homePage.checkoutHomePageButton();
+    }
+
     @StepGroup
     public void addProductCartWithoutLogIn (){
         navigateToHomepage();
@@ -80,6 +95,5 @@ public class CartSteps extends ScenarioSteps {
         addToCartButton_10000();
         clickAddToCartButton();
     }
-
 
 }

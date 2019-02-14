@@ -5,7 +5,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
-@DefaultUrl("http://qa3.fasttrackit.org:8008/")
+@DefaultUrl("http://qa3.fasttrackit.org:8008")
 public class CartPage extends PageObject {
 
     @FindBy (css = "a[href*='shop']")
@@ -35,9 +35,6 @@ public class CartPage extends PageObject {
     @FindBy (css = "button wc-forward")
     private WebElementFacade viewCartButton;
 
-    @FindBy (css = "a[title*='View your shopping cart']")
-    private WebElementFacade shoppingcartIcon;
-
 
     @FindBy (css = ".product-price .amount")
     private WebElementFacade productPriceShown;
@@ -54,7 +51,12 @@ public class CartPage extends PageObject {
     @FindBy (css = ".order-total .amount")
     private WebElementFacade orderTotal;
 
+    //@FindBy (css = ".product-remove a")
+    @FindBy (css = "a[href*='cart?remove']")
+    private WebElementFacade removeProductFromCart;
 
+    @FindBy (css = "[role='alert']")
+    private WebElementFacade removeProductCartConfirm;
 
     public void clickOnShopButton (){ clickOn(shopButton); }
 
@@ -68,9 +70,9 @@ public class CartPage extends PageObject {
         clickOn(proceedToCheckoutButton);
     waitABit(6000);}
 
-    public void shoppingCartIcon (){clickOn(shoppingcartIcon);}
 
     public void updateCartButton (){clickOn(updateCartButton);}
+
 
     public void click3QtyBox ()
     {clickOn(clickQtyBox);
@@ -115,8 +117,15 @@ public class CartPage extends PageObject {
             //clickOn(proceedToCheckoutButton);
         }
    }
+   public void removeProductFromCart (){
+        waitFor(removeProductFromCart);
+        clickOn(removeProductFromCart);
+   }
 
-
+    public boolean removeProductCartConfirm (){
+        waitFor(removeProductCartConfirm);
+        return removeProductCartConfirm.containsText("removed");
+    }
 
 
 }

@@ -55,8 +55,6 @@ public class CheckoutTests {
         checkoutSteps.enterOrderCommentsField();
         checkoutSteps.clickPlaceOrderButton();
         checkoutSteps.checkErrorPhoneMessageBilling();
-        checkoutSteps.checkErrorCountryMessageBilling();
-        checkoutSteps.checkoutThanksMessagecheck();
         checkoutSteps.ifCheckPhoneTksMessage();
     }
 }

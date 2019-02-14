@@ -19,6 +19,7 @@ public class RegisterSteps extends ScenarioSteps {
 
     @Step
     public void navigateToHomepage() {
+        getDriver().manage().window().maximize();
         homePage.open();
     }
 

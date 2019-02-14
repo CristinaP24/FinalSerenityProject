@@ -4,6 +4,7 @@ import com.fast.pages.HomePage;
 import com.fast.steps.serenity.CartSteps;
 import com.fast.steps.serenity.CheckoutSteps;
 import com.fast.steps.serenity.LoginSteps;
+import com.fast.steps.serenity.ShopSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -19,6 +20,8 @@ public class CartTests {
 
     @Steps
     CartSteps cartSteps;
+    ShopSteps shopSteps;
+
 
     @Test
     public void addProductCartWithoutLogIn () {
@@ -43,7 +46,7 @@ public class CartTests {
         cartSteps.viewCapProduct();
         cartSteps.click3QtyBox();
         cartSteps.clickAddToCartButton();
-        cartSteps.shoppingCartIcon();
+        cartSteps.checkoutHomePageButton();
         cartSteps.checkQtyCartIf();
         cartSteps.proceedToCheckoutButton();
 

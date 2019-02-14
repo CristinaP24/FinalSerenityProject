@@ -51,7 +51,7 @@ public class CheckoutPage extends PageObject {
     public void enterBillingCityField (){typeInto(billingCityField, "London");}
     public void enterBillingPostCodeField (){typeInto(billingPostcodeField, "12345678");}
     public void enterBillingPhoneField (){typeInto(billingPhoneField, "012345678");}
-    public void enterBilling0PhoneField (){typeInto(billingPhoneField, "0");}
+    public void enterBilling0PhoneField (){typeInto(billingPhoneField, " ");}
     public void enterOrderCommentsField (){typeInto(orderCommentsField, "Wingardium-Leviosa forever!");}
     public void clickPlaceOrderButton (){clickOn(placeOrderButton);}
 
@@ -61,20 +61,17 @@ public class CheckoutPage extends PageObject {
     }
     public boolean checkErrorPhoneMessageBilling(){
      waitFor(checkErrorPhoneMessageBilling);
-     return checkErrorPhoneMessageBilling.containsText("Billing Phone is a required field.");
+     return checkErrorPhoneMessageBilling.containsText("Billing Phone");
     }
-    public boolean checkErrorCountryMessageBilling(){
-  waitFor(checkErrorCountryMessageBilling);
-  return checkErrorCountryMessageBilling.containsText("Billing Street address is a required field.");
- }
-
-
 
     public boolean ifCheckPhoneTksMessage (){
-     if ((checkErrorPhoneMessageBilling()&& (checkErrorCountryMessageBilling())==true)){
-      return checkoutThanksMessagecheck();
+     if (checkErrorPhoneMessageBilling()){
+      clickCheckoutButton();
+      return true;
      }
-     return true;
+     return false;
     }
+
+
 
 }

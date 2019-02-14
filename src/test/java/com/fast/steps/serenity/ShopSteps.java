@@ -17,81 +17,59 @@ public class ShopSteps extends ScenarioSteps {
     ShopPage shopPage;
     MyAccountPage myAccountPage;
 
-@Step
+    @Step
 
-    public void validLogin () {
-    homePage.open();
-    //homePage.clickMyAccountButton();
-    //loginPage.setEmailField();
-    //loginPage.setPasswordField();
-    //loginPage.clickLoginButton();
+    public void validLogin() {
+        homePage.open();
+        //homePage.clickMyAccountButton();
+        //loginPage.setEmailField();
+        //loginPage.setPasswordField();
+        //loginPage.clickLoginButton();
 
-    //myAccountPage.checkLoggedIn();
-}
-@Step
-    public void selectBeltForProduct (){
-    Assert.assertTrue(shopPage.selectBeltForProduct());
-}
-
-@Step
-public void selectHoodieElseProduct (){
-    shopPage.selectHoodieElseProduct();
-}
+        //myAccountPage.checkLoggedIn();
+    }
 
     @Step
-    public void clickOnShopButtonMainMenu (){
+    public void selectBeltForProduct() {
+        Assert.assertTrue(shopPage.selectBeltForProduct());
+    }
+
+    @Step
+    public void selectHoodieElseProduct() {
+        shopPage.selectHoodieElseProduct();
+    }
+
+    @Step
+    public void clickOnShopButtonMainMenu() {
         shopPage.clickOnShopButtonMainMenu();
     }
 
     @Step
-    public void selectCapElseIfProduct (){
-    shopPage.selectCapElseIfProduct();
+    public void selectCapElseIfProduct() {
+        shopPage.selectCapElseIfProduct();
+    }
+
+
+    @Step
+    public void clickOnBeanieWithLogoProduct() {
+        shopPage.clickOnBeanieWithLogoProduct();
     }
 
     @Step
-    public void selectIndex3OfListProduct (){
-    shopPage.selectIndex3OfProduct();
+    public void addToCartBeanieWithLogo() {
+        shopPage.addToCartBeanieWithLogo();
     }
 
-   @Step
-   public void clickOnBeanieWithLogoProduct (){
-    shopPage.clickOnBeanieWithLogoProduct();
-   }
+    @Step
+    public void shoppingCartIcon (){
+        shopPage.shoppingCartIcon();
+    }
 
-   @Step
-   public void addToCartBeanieWithLogo (){
-    shopPage.addToCartBeanieWithLogo();
-   }
+    @Step
+    public void addToCartButtonPageProduct (){
+        shopPage.addToCartButtonPageProduct();
+    }
 
-
-//    @StepGroup
-//    public void selectBeltFromList (){
-//    validLogin();
-//    clickOnShopButtonMainMenu();
-//    selectBeltForProduct();
-//  }
-
-   @StepGroup
-    public void selectHoodieIfElseProduct (){
-    validLogin();
-    clickOnShopButtonMainMenu();
-    selectHoodieElseProduct();
- }
- @StepGroup
-    public void selectCapWithElseIfProduct (){
-    validLogin();
-    clickOnShopButtonMainMenu();
-    selectCapElseIfProduct();
-
-}
- @StepGroup
-    public void selectIndex3OfProduct (){
-    validLogin();
-    clickOnShopButtonMainMenu();
-    selectIndex3OfListProduct();
-    clickOnBeanieWithLogoProduct();
-    addToCartBeanieWithLogo();
- }
 
 
 }

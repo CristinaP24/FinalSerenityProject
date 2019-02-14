@@ -1,5 +1,6 @@
 package com.fast.features;
 
+import com.fast.steps.serenity.CartSteps;
 import com.fast.steps.serenity.ShopSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -15,6 +16,7 @@ public class ShopTests  {
     private WebDriver driver;
 @Steps
     ShopSteps shopSteps;
+    CartSteps cartSteps;
 
 @Test
 public void selectBeltForList (){
@@ -26,22 +28,19 @@ public void selectBeltForList (){
     public void selectHoodieElseProduct (){
     shopSteps.validLogin();
     shopSteps.clickOnShopButtonMainMenu();
-    shopSteps.selectHoodieIfElseProduct();
+    shopSteps.selectHoodieElseProduct();
+    shopSteps.addToCartButtonPageProduct();
+    shopSteps.shoppingCartIcon();
+    cartSteps.removeProductFromCart();
+    cartSteps.removeProductCartConfirm();
 }
 @Test
     public void selectCapElseIfProduct (){
     shopSteps.validLogin();
     shopSteps.clickOnShopButtonMainMenu();
-    shopSteps.selectCapWithElseIfProduct();
-}
-@Test
-    public void selectIndex3OfProduct (){
-    shopSteps.validLogin();
-    shopSteps.clickOnShopButtonMainMenu();
-    shopSteps.selectIndex3OfListProduct();
-    shopSteps.clickOnBeanieWithLogoProduct();
-    shopSteps.addToCartBeanieWithLogo();
-
+    shopSteps.selectCapElseIfProduct();
 }
 
 }
+
+

@@ -64,4 +64,85 @@ public class AdminDashboardSteps extends ScenarioSteps {
         return true;
     }
 
+    @Step
+    public void selectMainMenuCategories (){
+        adminDashboardPage.selectMainMenuCategories();
+    }
+
+    @Step
+    public void clickAddNewProductButton (){
+        adminDashboardPage.clickAddNewProductButton();
+    }
+
+    @Step
+    public void enterProductNameField (){
+        adminDashboardPage.enterProductNameField();
+    }
+
+//    @Step
+//    public void enterDescriptionField (){
+//        adminDashboardPage.enterDescriptionField();
+//    }
+   @Step
+    public void enterRegularPriceField (){
+        adminDashboardPage.enterRegularPriceField();
+   }
+   @Step
+    public void enterSalePriceField (){
+        adminDashboardPage.enterSalePriceField();
+   }
+   @Step
+    public void inventoryCategory (){
+        adminDashboardPage.inventoryCategory();
+   }
+   @Step
+   public void skuCode (){
+        adminDashboardPage.skuCode();
+   }
+
+   @Step
+    public void manageStockCheckBox (){
+        adminDashboardPage.manageStockCheckBox();
+   }
+
+   @Step
+    public void setStockNumber (){
+        adminDashboardPage.setStockNumber();
+   }
+
+   @Step
+    public void attributesCategory (){
+        adminDashboardPage.attributesCategory();
+   }
+
+   @Step
+    public void customProductAttributeDd (){
+        adminDashboardPage.customProductAttributeDd();
+   }
+
+   @Step
+    public void selectColorAttribute (){
+        adminDashboardPage.selectColorAttribute();
+   }
+
+   @Step
+   public void addAttributeProdButton (){
+        adminDashboardPage.addAttributeProdButton();
+   }
+   @Step
+    public void saveAtrributesButton (){
+        adminDashboardPage.saveAtrributesButton();
+   }
+   @Step
+    public void selectColorDd (){
+        adminDashboardPage.selectColorDd();
+   }
+   @Step
+    public void clickAccessoriesCategory (){
+        adminDashboardPage.clickAccessoriesCategory();
+   }
+   @Step
+    public void setClickPublishButton (){
+        adminDashboardPage.setClickPublishButton();
+   }
 }

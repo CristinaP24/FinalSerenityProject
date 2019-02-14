@@ -20,7 +20,7 @@ public class SearchBarTests {
         searchBarSteps.navigateToHomePage();
         searchBarSteps.clickSearchBarIcon();
         searchBarSteps.enterBeanieProductSearchBarField();
-        searchBarSteps.clickSearchBarButton();
+        searchBarSteps.clickSearchBarButton(); //cont?
     }
 
     @Test
@@ -29,7 +29,7 @@ public class SearchBarTests {
         searchBarSteps.clickSearchBarIcon();
         searchBarSteps.enterSearchTermLength();
         searchBarSteps.clickSearchBarButton();
-        searchBarSteps.checkMessageSearchBar();
+        searchBarSteps.checkMessageSearchBar(); //de pus assert pe page not found
     }
 
     @Test
@@ -37,6 +37,7 @@ public class SearchBarTests {
         searchBarSteps.navigateToHomePage();
         searchBarSteps.clickSearchBarIcon() ;
         searchBarSteps.selectProductValidInvalid();
+        searchBarSteps.clickSearchBarButton();
     }
 
 }

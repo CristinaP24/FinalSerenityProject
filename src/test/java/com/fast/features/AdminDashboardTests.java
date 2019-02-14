@@ -30,5 +30,30 @@ public class AdminDashboardTests {
         adminDashboardSteps.applyButton();
         //adminDashboardSteps.checkOnHoldStatusChangeMessage();
     }
+    @Test
+    public void createProduct(){
+        adminDashboardSteps.validAdminLogin();
+        adminDashboardSteps.checkLoggedInAdmin();
+        adminDashboardSteps.selectDashboardRootMenu();
+        adminDashboardSteps.setClickAdminRootMenu();
+        adminDashboardSteps.selectMainMenuCategories();
+        adminDashboardSteps.clickAddNewProductButton();
+        adminDashboardSteps.enterProductNameField();
+        adminDashboardSteps.enterRegularPriceField();
+        adminDashboardSteps.enterSalePriceField();
+        adminDashboardSteps.inventoryCategory();
+        adminDashboardSteps.skuCode();
+        adminDashboardSteps.manageStockCheckBox();
+        adminDashboardSteps.setStockNumber();
+        adminDashboardSteps.attributesCategory();
+        adminDashboardSteps.customProductAttributeDd();
+        adminDashboardSteps.selectColorAttribute();
+        adminDashboardSteps.addAttributeProdButton();
+        adminDashboardSteps.saveAtrributesButton();
+        adminDashboardSteps.selectColorDd();
+        adminDashboardSteps.clickAccessoriesCategory();
+        adminDashboardSteps.enterProductNameField();
+        adminDashboardSteps.setClickPublishButton();
+    }
 }
 

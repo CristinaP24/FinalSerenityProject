@@ -17,6 +17,7 @@ public class LoginSteps extends ScenarioSteps {
 
     @Step
     public void navigateToHomepage(){
+        getDriver().manage().window().maximize(); //mareste pag
         homePage.open();
     }
 
@@ -59,8 +60,14 @@ public class LoginSteps extends ScenarioSteps {
         Assert.assertTrue(myAccountPage.checkInvalidUsername257());
     }
 
+    @Step
+    public void errorMessageLogin (){Assert.assertTrue(loginPage.errorMessageLogin());}
 
+    @Step
+    public void InvalidLogInWithIf (){loginPage.InvalidLogInWithIf();}
 
+    @Step
+    public void setEmailField2 (){loginPage.setEmailField2();}
 
     @StepGroup
     public void login(){
@@ -70,26 +77,6 @@ public class LoginSteps extends ScenarioSteps {
         setPassword();
         clickOnLoginButton();
         checkLoggedIn();
-    }
-
-    @StepGroup
-    public void loginInvalidCaps(){
-        navigateToHomepage();
-        goToLogin();
-        setUserInvalidCaps();
-        setPassword();
-        clickOnLoginButton();
-        checkLoggedIn();
-    }
-    @StepGroup
-    public void loginInvalid257() {
-        navigateToHomepage();
-        goToLogin();
-        setUserInvalid257();
-        setPassword();
-        clickOnLoginButton();
-        checkInvalidUsername257();
-
     }
 
 }

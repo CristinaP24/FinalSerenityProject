@@ -4,6 +4,7 @@ import com.fast.pages.*;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.junit.Assert;
 
 public class ReviewSteps extends ScenarioSteps {
 
@@ -73,7 +74,12 @@ public class ReviewSteps extends ScenarioSteps {
     public void clickBackButtonInvalidReview (){reviewPage.backButtonInvalidReview();}
 
     @Step
-    public void errorMessageReviewStrong (){reviewPage.errorMessageReviewStrong();}
+    public void clickSubmitButtonReview (){reviewPage.clickSubmitButtonReview();}
+
+    @Step
+    public void errorMessageReviewStrong ()
+    {
+        Assert.assertTrue(reviewPage.errorMessageReviewStrong());}
 
     @Step
     public void ifCheckSpaceReview (){reviewPage.ifCheckSpaceReview();}
@@ -93,23 +99,6 @@ public class ReviewSteps extends ScenarioSteps {
         addValidReview();
         clickSubmitReviewButton();
     }
-
-    @StepGroup
-    public void invalidSpaceReview (){
-        navigateToHomepage();
-        goToLogin();
-        clickPasswordMyAccountField();
-        setUser();
-        setPassword();
-        clickLoginButton();
-        clickOnShopButton();
-        viewCapProduct();
-        clickReviewButton();
-        clickStar2RatingProduct();
-        ifCheckSpaceReview();
-        clickSubmitReviewButton();
-    }
-
 
 
 

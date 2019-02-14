@@ -45,7 +45,7 @@ public class ReviewPage extends PageObject {
     @FindBy(css = "a[href*='history.back']")
     private WebElementFacade backButtonInvalidReview;
 
-    @FindBy(css = "p>strong")
+    @FindBy(css = "#error-page p strong")
     private WebElementFacade errorMessageReviewStrong;
 
     public void setEmailField() {
@@ -87,7 +87,7 @@ public class ReviewPage extends PageObject {
 
     public boolean errorMessageReviewStrong() {
         waitFor(errorMessageReviewStrong);
-        return errorMessageReviewStrong.containsText("ERROR: please type a comment.");
+        return errorMessageReviewStrong.containsText("ERROR");
     }
 
     public void addValidReview() {
@@ -111,11 +111,13 @@ public class ReviewPage extends PageObject {
     }
 
 
-    public void ifCheckSpaceReview() {
+    public boolean ifCheckSpaceReview() {
 
         if (errorMessageReviewStrong()) { //de corectat
             backButtonInvalidReview();
         }
+        return true;
     }
+
 
 }

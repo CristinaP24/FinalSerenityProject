@@ -69,11 +69,19 @@ public class ShopPage extends PageObject {
     @FindBy(css = "button[name*='add-to-cart']")
     private WebElementFacade addToCartButtonSingleProduct;
 
-    @FindBy(css = "aside form")
+    @FindBy(css = "#search-2 input[title*='Search for']")
     private WebElementFacade searchBarLateral;
 
-    @FindBy(css = ".product")
-    List<WebElementFacade> listProductsPage1;
+    @FindBy (css = "a[title*='View your shopping cart']")
+    private WebElementFacade shoppingcartIcon;
+
+    @FindBy (css = ".single_add_to_cart_button")
+    private WebElementFacade addToCartButtonPageProduct;
+
+
+    @FindBy(css = ".woocommerce-loop-product__title")
+    //@FindBy (css = " .products")
+            List<WebElementFacade> listProductsPage1;
 
     public void clickOnShopButtonMainMenu() {
         clickOn(clickOnShopButtonMainMenu);
@@ -81,76 +89,59 @@ public class ShopPage extends PageObject {
 
     public boolean selectBeltForProduct() {
         for (WebElementFacade product : listProductsPage1) {
-            if (product.getText().contains("Belt")){
-                product.findElement(By.cssSelector("img")).click();
-            return true;
-        }
-    }
-    return false;
-}
-
-    public boolean selectHoodieElseProduct() {
-        for (WebElementFacade product : listProductsPage1) {
-            if (product.getText().contains("Octopus is not on this page."))
+            if (product.getText().contains("Belt")) {
+                //product.findElement(By.cssSelector("img")).click();
                 clickOn(product);
-
-            else {
-                product.getText().contains("Zipper");
-                System.out.println("y work?");
-                clickOn(product);
+                return true;
             }
-            return true;
         }
         return false;
     }
 
-    public void selectCapElseIfProduct() {
+    public boolean selectHoodieElseProduct() {
         for (WebElementFacade product : listProductsPage1) {
-            if (product.getText().contains("Fork is not on this page."))
+            if (product.getText().contains("Octopus is not on this page.")){
                 clickOn(product);
-            else if (product.getText().contains("Neither is knife.")) {
+            return true;
+        } else if (product.getText().contains("Hoodie with Zipper")) {
+                System.out.println("y work?");
                 clickOn(product);
-//            } else {
-//                clickOn(searchBarLateral);
-//                typeInto(searchBarLateral, "Cap"); //adaugat buton pt enter dupa inserare produs
-//            }
-
-        } else {
-            clickOn(searchBarLateral);
-                searchBarLateral.typeAndEnter("Cap"); //adaugat buton pt enter dupa inserare produs
+                return true;
+            }
         }
-
-        }
+        return false;
     }
 
+    public boolean selectCapElseIfProduct() {
+        for (WebElementFacade product : listProductsPage1) {
+            if (product.getText().contains("Fork is not on this page.")) {
+                clickOn(product);
+                return true;
+            } else if (product.getText().contains("Neither is knife.")) {
+                clickOn(product);
+                return true;
 
-        public void selectIndex3OfProduct () {//de sters
-        listProductsPage1.add(viewAlbumProduct);
-        listProductsPage1.add(readMore_AtmBWycWProduct);
-        listProductsPage1.add(viewtBeanieProduct);
-        listProductsPage1.add(viewBeanieWithLogoProduct);
-        listProductsPage1.add(viewBeltProduct);
-        listProductsPage1.add(view_bzZDKvQo_Product7);
-        listProductsPage1.add(view_bzZDKvQo_Product78);
-        listProductsPage1.add(viewCapProduct);
-        listProductsPage1.add(view_dYhklAZh_Product);
-        listProductsPage1.add(view_EMTxZNTx_Product);
-        listProductsPage1.add(view_gamiehg_Product);
-        listProductsPage1.add(readMore_hghjg_Product);
-        listProductsPage1.add(selectOptions_Hoodie);
-        listProductsPage1.add(view_hoodieWithLogoProduct);
-        listProductsPage1.add(view_hoodieWithZipperProduct);
-        listProductsPage1.add(view_huwaxbto_Product);
-        listProductsPage1.get(3);
-
+            } else {
+                typeInto(searchBarLateral, "Cap");
+                return true;
             }
-
-            public void clickOnBeanieWithLogoProduct () {
-                clickOn(viewBeanieWithLogoProduct);
-            }
-
-            public void addToCartBeanieWithLogo () {
-                clickOn(addToCartButtonSingleProduct);
-            }
-
         }
+        return false;
+    }
+    public void shoppingCartIcon ()
+    {clickOn(shoppingcartIcon);}
+
+
+    public void clickOnBeanieWithLogoProduct() {
+        clickOn(viewBeanieWithLogoProduct);
+    }
+
+    public void addToCartBeanieWithLogo() {
+        clickOn(addToCartButtonSingleProduct);
+    }
+
+    public void addToCartButtonPageProduct (){
+        waitFor(20);
+        clickOn(addToCartButtonPageProduct);}
+
+}

@@ -9,7 +9,7 @@ import net.thucydides.core.pages.PageObject;
 public class LoginPage extends PageObject {
 
 
-    @FindBy (css = "[id^='username']")
+    @FindBy(css = "[id^='username']")
     private WebElementFacade emailField;
 
 
@@ -19,37 +19,60 @@ public class LoginPage extends PageObject {
     @FindBy(css = "[name^='login']")
     private WebElementFacade loginButton;
 
+    @FindBy(css = ".woocommerce .woocommerce-error")
+    private WebElementFacade errormessageLogin;
 
-    public void setEmailField(){
+    public void setEmailField() {
         waitFor(emailField);
-        typeInto(emailField,"hermioneg@gmail.com");
+        typeInto(emailField, "hermioneg@gmail.com");
     }
 
-    public void setInvalidEmailCaps (){
+    public void setInvalidEmailCaps() {
         waitFor(emailField);
         typeInto(emailField, "heRmioneg@gmail.com");
     }
 
-    public void setUserInvalid257 (){
+    public void setUserInvalid257() {
         waitFor(emailField);
         typeInto(emailField, "swajhduuenuztwyxrlrylepcdwfcjwbdvgtnoyvjedktyjvtyxjhtizwhlkrzbmojmtqgvjjbapisfvsusnvcxrgfxpfcmkolrtjzuogfjsdsimnbflqmixvnozyyuepzuitgugteovwezrdrlleobanfjrrepjpuwmhcqzfsujqqvztsfykvnqdaikacrostpnkjkonosrfbefsplluybtsluqkpstbylykfnhjuzgljranmgiprlfqmwkdwxqze@gmail.com");
     }
 
-    public void setPasswordField()
-    {
+    public void setPasswordField() {
         typeInto(passwordField, "notamuggle77");
     }
 
-    public void clickLoginButton()
-    {
+    public void clickLoginButton() {
         clickOn(loginButton);
     }
 
-   //generare string
 
-
-
+    public boolean errorMessageLogin() {
+        waitFor(errormessageLogin);
+        return errormessageLogin.containsText("ERROR");
     }
+
+    public boolean InvalidLogInWithIf() {
+        if (errorMessageLogin()) {
+            setEmailField();
+            setPasswordField();
+            clickLoginButton();
+            return true;
+        }
+        return false;
+    }
+
+    public void setEmailField2() {
+        waitFor(emailField);
+        typeInto(emailField, "hermg@gmail.com");
+    }
+
+
+
+
+
+
+}
+
 
 
 

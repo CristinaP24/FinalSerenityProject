@@ -47,4 +47,16 @@ public class LoginTests {
         loginSteps.checkInvalidUsername257();
     }
 
+    @Test
+    public void InvalidLogInWithIf (){
+        loginSteps.navigateToHomepage();
+        loginSteps.goToLogin();
+        loginSteps.setEmailField2();
+        loginSteps.setPassword();
+        loginSteps.clickOnLoginButton();
+        loginSteps.errorMessageLogin();
+        loginSteps.InvalidLogInWithIf();
+
+    }
+
 }
