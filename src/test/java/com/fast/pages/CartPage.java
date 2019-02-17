@@ -58,6 +58,9 @@ public class CartPage extends PageObject {
     @FindBy (css = "[role='alert']")
     private WebElementFacade removeProductCartConfirm;
 
+    @FindBy (css = ".woocommerce-message")
+    private WebElementFacade addProductCartConfirmMessage;
+
     public void clickOnShopButton (){ clickOn(shopButton); }
 
     public void addBeanieToCartProduct (){clickOn(addToCartBeanieProduct);}
@@ -125,6 +128,11 @@ public class CartPage extends PageObject {
     public boolean removeProductCartConfirm (){
         waitFor(removeProductCartConfirm);
         return removeProductCartConfirm.containsText("removed");
+    }
+
+    public boolean addProductCartConfirmMessage (){
+        waitFor(addProductCartConfirmMessage);
+        return addProductCartConfirmMessage.containsText("has been added to your cart.");
     }
 
 

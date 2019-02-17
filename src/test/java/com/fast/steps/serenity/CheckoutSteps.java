@@ -110,16 +110,15 @@ public class CheckoutSteps extends ScenarioSteps {
         Assert.assertTrue(checkoutPage.checkErrorPhoneMessageBilling());
     }
 
-//    @Step
+    //    @Step
 //    public void checkErrorCountryMessageBilling() {
 //        Assert.assertTrue(checkoutPage.checkErrorCountryMessageBilling());
 //
 //    }
-@Step
-public void ifCheckPhoneTksMessage (){
+    @Step
+    public void ifCheckPhoneTksMessage() {
         checkoutPage.ifCheckPhoneTksMessage();
-}
-
+    }
 
 
     @StepGroup
@@ -142,7 +141,6 @@ public void ifCheckPhoneTksMessage (){
         clickPlaceOrderButton();
         checkoutThanksMessagecheck();
     }
-
 
 
 }

@@ -15,56 +15,61 @@ public class BlogPostSteps extends ScenarioSteps {
     BlogPostPage blogPostPage;
 
     @Step
-    public void validLogin (){
+    public void validLogin() {
         homePage.open();
         homePage.clickMyAccountButton();
         loginPage.setEmailField();
         loginPage.setPasswordField();
         loginPage.clickLoginButton();
     }
-@Step
-     public void clickBlogButton (){
-        blogPostPage.clickOnBlogButton();
-}
-
-@Step
-    public void typeCommentBlogField(){
-        blogPostPage.typeCommentBlogField();
-}
-@Step
-public void clickPostBlogCommentButton (){
-        blogPostPage.clickPostBlogCommentButton();
-}
-@Step
-public void confirmLoginBlogMessage (){
-    Assert.assertTrue(blogPostPage.confirmLoginBlogMessage());}
 
     @Step
-    public void logutAtWordinComment (){
+    public void clickBlogButton() {
+        blogPostPage.clickOnBlogButton();
+    }
+
+    @Step
+    public void typeCommentBlogField() {
+        blogPostPage.typeCommentBlogField();
+    }
+
+    @Step
+    public void clickPostBlogCommentButton() {
+        blogPostPage.clickPostBlogCommentButton();
+    }
+
+    @Step
+    public void confirmLoginBlogMessage() {
+        Assert.assertTrue(blogPostPage.confirmLoginBlogMessage());
+    }
+
+    @Step
+    public void logutAtWordinComment() {
         blogPostPage.logutAtWordinComment();
     }
 
     @Step
-    public void typeCommentBlogFieldPups (){
+    public void typeCommentBlogFieldPups() {
         blogPostPage.typeCommentBlogFieldPups();
     }
 
     @Step
-    public void typeCommentBlogFieldpups (){
+    public void typeCommentBlogFieldpups() {
         blogPostPage.typeCommentBlogFieldpups();
     }
 
-@StepGroup
-    public void logoutAtWordInComment (){
+    @StepGroup
+    public void logoutAtWordInComment() {
         validLogin();
         clickBlogButton();
         typeCommentBlogField();
         clickPostBlogCommentButton();
         confirmLoginBlogMessage();
         logutAtWordinComment();
-}
+    }
+
     @StepGroup
-    public void logoutAtWordInComment_pups (){
+    public void logoutAtWordInComment_pups() {
         validLogin();
         clickBlogButton();
         typeCommentBlogFieldpups();
@@ -72,12 +77,6 @@ public void confirmLoginBlogMessage (){
         confirmLoginBlogMessage();
         logutAtWordinComment();
     }
-
-
-
-
-
-
 
 
 }

@@ -13,38 +13,28 @@ public class BlogPostTests {
     @Managed(uniqueSession = true)
     private WebDriver driver;
 
- @Steps
- BlogPostSteps blogPostSteps;
+    @Steps
+    BlogPostSteps blogPostSteps;
 
- @Test
- public void logoutAtWordInComment (){
-    blogPostSteps.validLogin();
-    blogPostSteps.clickBlogButton();
-    blogPostSteps.typeCommentBlogField();
-    blogPostSteps.clickPostBlogCommentButton();
-    blogPostSteps.confirmLoginBlogMessage();
-    blogPostSteps.logutAtWordinComment();
-}
+    @Test
+    public void logoutAtWordInComment() {
+        blogPostSteps.validLogin();
+        blogPostSteps.clickBlogButton();
+        blogPostSteps.typeCommentBlogField();
+        blogPostSteps.clickPostBlogCommentButton();
+        blogPostSteps.confirmLoginBlogMessage();
+        blogPostSteps.logutAtWordinComment();
+    }
 
-@Test
-    public void logoutAtWordInComment_pups () {
-    blogPostSteps.validLogin();
-    blogPostSteps.clickBlogButton();
-    blogPostSteps.typeCommentBlogFieldpups();
-    blogPostSteps.clickPostBlogCommentButton();
-    blogPostSteps.confirmLoginBlogMessage();
-    blogPostSteps.logutAtWordinComment();
-}
-
-
-
-
-
-
-
-
-
-
+    @Test
+    public void logoutAtWordInComment_pups() {
+        blogPostSteps.validLogin();
+        blogPostSteps.clickBlogButton();
+        blogPostSteps.typeCommentBlogFieldpups();
+        blogPostSteps.clickPostBlogCommentButton();
+        blogPostSteps.confirmLoginBlogMessage();
+        blogPostSteps.logutAtWordinComment();
+    }
 
 
 }

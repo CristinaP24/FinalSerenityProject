@@ -1,6 +1,8 @@
 package com.fast.features;
 
+import com.fast.steps.serenity.CartSteps;
 import com.fast.steps.serenity.SearchBarSteps;
+import com.fast.steps.serenity.ShopSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -14,6 +16,8 @@ public class SearchBarTests {
     private WebDriver driver;
     @Steps
     SearchBarSteps searchBarSteps;
+    ShopSteps shopSteps;
+    CartSteps cartSteps;
 
     @Test
     public void enterBeanieProductSearchBarField (){
@@ -21,6 +25,12 @@ public class SearchBarTests {
         searchBarSteps.clickSearchBarIcon();
         searchBarSteps.enterBeanieProductSearchBarField();
         searchBarSteps.clickSearchBarButton(); //cont?
+        shopSteps.clickOnBeanieWithLogoProduct();
+        cartSteps.clickAddToCartButton();
+        cartSteps.addProductCartConfirmMessage();
+        cartSteps.clickAddToCartButton();
+        cartSteps.removeProductFromCart();
+
     }
 
     @Test
@@ -29,7 +39,9 @@ public class SearchBarTests {
         searchBarSteps.clickSearchBarIcon();
         searchBarSteps.enterSearchTermLength();
         searchBarSteps.clickSearchBarButton();
-        searchBarSteps.checkMessageSearchBar(); //de pus assert pe page not found
+        searchBarSteps.checkMessageSearchBar();
+        searchBarSteps.clickSearchAgainButton(); //ce e cu butonul
+
     }
 
     @Test

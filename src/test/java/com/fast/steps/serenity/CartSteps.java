@@ -14,72 +14,95 @@ public class CartSteps extends ScenarioSteps {
 
 
     @Step
-    public void clickHomePageButton (){homePage.homePageButton();}
+    public void clickHomePageButton() {
+        homePage.homePageButton();
+    }
 
     @Step
-    public void navigateToHomepage(){
+    public void navigateToHomepage() {
         homePage.open();
     }
 
     @Step
-    public void clickOnShopButton (){cartPage.clickOnShopButton();}
+    public void clickOnShopButton() {
+        cartPage.clickOnShopButton();
+    }
 
     @Step
-    public void addBeanieToCart (){cartPage.addBeanieToCartProduct();}
+    public void addBeanieToCart() {
+        cartPage.addBeanieToCartProduct();
+    }
 
     @Step
-    public void viewShoppingCartButton (){cartPage.viewShoppingCartButton();}
+    public void viewShoppingCartButton() {
+        cartPage.viewShoppingCartButton();
+    }
 
     @Step
-    public void viewCapProduct (){cartPage.viewCapProduct();}
+    public void viewCapProduct() {
+        cartPage.viewCapProduct();
+    }
 
     @Step
-    public void clickQtyBox (){cartPage.clickQtyBox();}
+    public void clickQtyBox() {
+        cartPage.clickQtyBox();
+    }
 
     @Step
-    public void addToCartButton_10000 () {cartPage.addToCartButton_10000();}
+    public void addToCartButton_10000() {
+        cartPage.addToCartButton_10000();
+    }
 
     @Step
-    public void clickAddToCartButton ()
-    {cartPage.clickAddtoCartButton();}
+    public void clickAddToCartButton() {
+        cartPage.clickAddtoCartButton();
+    }
 
     @Step
-    public void click3QtyBox (){
+    public void click3QtyBox() {
         cartPage.click3QtyBox();
     }
+
     @Step
-    public void proceedToCheckoutButton (){
+    public void proceedToCheckoutButton() {
         cartPage.proceedToCheckoutButton();
     }
 
     @Step
-    public void checkQtyCartIf (){
+    public void checkQtyCartIf() {
         cartPage.checkQtyCartIf();
     }
 
     @Step
-    public void viewCartButton (){
+    public void viewCartButton() {
         cartPage.viewCartButton();
     }
 
 
     @Step
-    public void removeProductFromCart ()
-    {cartPage.removeProductFromCart();}
+    public void removeProductFromCart() {
+        cartPage.removeProductFromCart();
+    }
 
 
     @Step
-    public void removeProductCartConfirm (){
+    public void removeProductCartConfirm() {
         Assert.assertTrue(cartPage.removeProductCartConfirm());
     }
 
     @Step
-    public void checkoutHomePageButton (){
+    public void checkoutHomePageButton() {
         homePage.checkoutHomePageButton();
     }
 
+    @Step
+    public void addProductCartConfirmMessage (){
+        Assert.assertTrue(cartPage.addProductCartConfirmMessage());
+    }
+
+
     @StepGroup
-    public void addProductCartWithoutLogIn (){
+    public void addProductCartWithoutLogIn() {
         navigateToHomepage();
         clickOnShopButton();
         addBeanieToCart();
@@ -87,7 +110,7 @@ public class CartSteps extends ScenarioSteps {
     }
 
     @StepGroup
-    public void addProductCart_10000 (){
+    public void addProductCart_10000() {
         navigateToHomepage();
         clickOnShopButton();
         viewCapProduct();

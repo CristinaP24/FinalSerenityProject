@@ -24,14 +24,15 @@ public class CartTests {
 
 
     @Test
-    public void addProductCartWithoutLogIn () {
+    public void addProductCartWithoutLogIn() {
         cartSteps.navigateToHomepage();
         cartSteps.clickOnShopButton();
         cartSteps.addBeanieToCart();
         cartSteps.viewShoppingCartButton();
     }
+
     @Test
-    public void addProductCart_10000 () {
+    public void addProductCart_10000() {
         cartSteps.navigateToHomepage();
         cartSteps.clickOnShopButton();
         cartSteps.viewCapProduct();
@@ -39,8 +40,9 @@ public class CartTests {
         cartSteps.addToCartButton_10000();
         cartSteps.clickAddToCartButton();
     }
+
     @Test
-    public void checkQtyCartIf (){
+    public void checkQtyCartIf() {
         cartSteps.navigateToHomepage();
         cartSteps.clickOnShopButton();
         cartSteps.viewCapProduct();

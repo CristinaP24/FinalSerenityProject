@@ -33,7 +33,8 @@ public class AdminDashboardPage extends PageObject {
     @FindBy(css = "#order_date .sorting-indicator")
     private WebElementFacade sortingDateArrow;
 
-    @FindBy(css = "th.check-column")
+   // @FindBy(css = "th.check-column")
+    @FindBy (css = "#cb")
     private WebElementFacade checkBoxTick;
 
     @FindBy(css = " .order_number column-order_number has-row-actions column-primar")
@@ -48,7 +49,7 @@ public class AdminDashboardPage extends PageObject {
     @FindBy(id = "doaction")
     private WebElementFacade applyButton;
 
-    @FindBy(className = ".updated")
+    @FindBy(className = " updated")
     private WebElementFacade statusChangeMessage;
 
     @FindBy(css = ".wp-menu-name")
@@ -56,65 +57,91 @@ public class AdminDashboardPage extends PageObject {
 
     List<WebElementFacade> mainMenuCategories;
 
-    @FindBy (css = "#menu-posts-product a[href*='post-new']")
+    @FindBy(css = "#menu-posts-product a[href*='post-new']")
     private WebElementFacade addNewProductButton;
 
     @FindBy(css = "#titlewrap [type=text]")
     private WebElementFacade enterProductNameField;
 
-    @FindBy(css = " .order_number column-order_number has-row-actions column-primar")
+      @FindBy(css = "#the-list")
     List<WebElementFacade> listOrders;
 
-    @FindBy (id = "_regular_price")
+    @FindBy(id = "_regular_price")
     private WebElementFacade enterRegularPriceField;
 
-    @FindBy (id = "_sale_price")
+    @FindBy(id = "_sale_price")
     private WebElementFacade enterSalePriceField;
 
-    @FindBy (css = "a[href*='#inventory']")
+    @FindBy(css = "a[href*='#inventory']")
     private WebElementFacade inventoryCategory;
 
-    @FindBy (id = "_sku")
-private WebElementFacade skuCode;
+    @FindBy(id = "_sku")
+    private WebElementFacade skuCode;
 
-    @FindBy (id = "_manage_stock")
+    @FindBy(id = "_manage_stock")
     private WebElementFacade manageStockCheckBox;
 
-    @FindBy (id = "_stock")
+    @FindBy(id = "_stock")
     private WebElementFacade setStockNumber;
 
-    @FindBy (css = "a[href='#product_attributes']")
+    @FindBy(css = "a[href='#product_attributes']")
     private WebElementFacade attributesCategory;
 
-    @FindBy (css = ".attribute_taxonomy")
-   private WebElementFacade customProductAttribute;
+    @FindBy(css = ".attribute_taxonomy")
+    private WebElementFacade customProductAttribute;
 
-    @FindBy (css = ".attribute_taxonomy [value='pa_color']")
+    @FindBy(css = ".attribute_taxonomy [value='pa_color']")
     private WebElementFacade selectColorAttribute;
 
-    @FindBy (css = ".attribute_taxonomy [value='pa_size']")
+    @FindBy(css = ".attribute_taxonomy [value='pa_size']")
     private WebElementFacade selectSizeAttribute;
 
-    @FindBy (css = ".button.add_attribute")
+    @FindBy(css = ".button.add_attribute")
     private WebElementFacade addAttributeProdButton;
 
-    @FindBy (css = ".select_all_attributes")
+    @FindBy(css = ".select_all_attributes")
     private WebElementFacade selectAllAttributesButton;
 
-    @FindBy (css = ".button.save_attributes")
+    @FindBy(css = ".button.save_attributes")
     private WebElementFacade saveAtrributesButton;
 
-    @FindBy (css = "#product_attributes > div.product_attributes.wc-metaboxes.ui-sortable > div:nth-child(2) > div > table > tbody > tr:nth-child(1) > td:nth-child(2) > span > span.selection > span > ul > li > input")
+    @FindBy(css = "#product_attributes > div.product_attributes.wc-metaboxes.ui-sortable > div:nth-child(2) > div > table > tbody > tr:nth-child(1) > td:nth-child(2) > span > span.selection > span > ul > li > input")
     private WebElementFacade selectColorDd;
 
-    @FindBy (id = "in-product_cat-213")
+    @FindBy(id = "in-product_cat-213")
     private WebElementFacade checkAccessoriesCategory;
 
-    @FindBy (css = "#publishing-action [type*='hidden']")
+    @FindBy(css = "#publishing-action [type*='hidden']")
     private WebElementFacade hiddenPublishButton;
 
-    @FindBy (css = "#publishing-action .button")
+    @FindBy(css = "#publishing-action .button")
     private WebElementFacade clickPublishButton;
+
+    @FindBy(css = "#message p")
+    private WebElementFacade productPublishedConfirmMessage;
+
+    @FindBy(css = "#message p a[href*='8008']")
+    private WebElementFacade viewPublishedProduct;
+
+    @FindBy(css = " product_title entry-title") //
+    private WebElementFacade mainProductTitle;
+
+    @FindBy(css = "a[rel='tag']")
+    private WebElementFacade mainProductCategory; //
+
+    @FindBy(css = "input-text qty text")
+    private WebElementFacade mainProductQuantity; //
+
+    @FindBy(css = ".sku_wrapper")
+    private WebElementFacade mainProductSku;//
+
+    @FindBy(css = "stock in-stock")
+    private WebElementFacade mainProductStock; //
+
+    //@FindBy(css = " .summary entry-summary")
+    //private WebElementFacade mainProductEntryDetails;
+
+    //private List<WebElementFacade> mainProductEntryDetails; //
 
     public void clickWooCommerceCateg() {
         clickOn(clickWooCommerceCateg);
@@ -128,7 +155,7 @@ private WebElementFacade skuCode;
 
         for (WebElementFacade orders : listOrders) {
             int size = listOrders.size();
-            if (size <= 13) {
+            if (size <= 5) {
                 clickOn(checkBoxTick);
                 return true;
             }
@@ -159,7 +186,6 @@ private WebElementFacade skuCode;
     }
 
 
-
     public boolean selectMainMenuCategories() {
         Actions action = new Actions(getDriver());
         for (WebElementFacade category : mainMenuCategories) {
@@ -173,80 +199,118 @@ private WebElementFacade skuCode;
 
     }
 
-    public void clickAddNewProductButton (){
+    public void clickAddNewProductButton() {
         clickOn(addNewProductButton);
     }
 
-    public void enterProductNameField (){
+    public void enterProductNameField() {
         typeInto(enterProductNameField, "Veritaserum Potion");
     }
 
 
-    public void enterRegularPriceField (){
+    public void enterRegularPriceField() {
         typeInto(enterRegularPriceField, "25");
     }
 
-    public void enterSalePriceField (){
+    public void enterSalePriceField() {
         typeInto(enterSalePriceField, "20");
     }
 
-    public void inventoryCategory (){
+    public void inventoryCategory() {
         clickOn(inventoryCategory);
     }
 
-    public void skuCode (){
+    public void skuCode() {
         typeInto(skuCode, "serum-truth77");
     }
 
-    public void manageStockCheckBox (){
+    public void manageStockCheckBox() {
         clickOn(manageStockCheckBox);
     }
 
-    public void setStockNumber (){
+    public void setStockNumber() {
         typeInto(setStockNumber, "50");
     }
 
-    public void attributesCategory (){
+    public void attributesCategory() {
         clickOn(attributesCategory);
     }
 
-    public void customProductAttributeDd (){
+    public void customProductAttributeDd() {
         Actions action = new Actions(getDriver());
         WebElementFacade e = customProductAttribute;
         action.moveToElement(e).perform();
     }
 
-    public void selectColorAttribute (){
+    public void selectColorAttribute() {
         clickOn(selectColorAttribute);
     }
 
 
-    public void addAttributeProdButton (){
+    public void addAttributeProdButton() {
         clickOn(addAttributeProdButton);
     }
 
-    public void saveAtrributesButton (){
+    public void saveAtrributesButton() {
         clickOn(saveAtrributesButton);
     }
 
-    public void selectColorDd (){
+    public void selectColorDd() {
         waitABit(3000);
         clickOn(selectAllAttributesButton);
 
     }
 
-    public void clickAccessoriesCategory () {
+    public void clickAccessoriesCategory() {
         clickOn(checkAccessoriesCategory);
     }
 
 
-
-    public void setClickPublishButton (){
-        ;//("#publishing-action [type*='hidden']");
-       //hiddenPublishButton.isDisplayed();
+    public void setClickPublishButton() {
         waitABit(5000);
-       clickOn(clickPublishButton);
+        clickOn(clickPublishButton);
 
     }
 
+    public boolean checkProductPublished() {
+        waitABit(3000);
+        return productPublishedConfirmMessage.containsText("Product published.");
+    }
+
+    public void viewPublishedProduct() {
+        clickOn(viewPublishedProduct);
+    }
+
+    public boolean checkMainProductTitle() {
+        return mainProductTitle.containsText("Veritaserum Potion");
+    }
+
+    public boolean checkMainProductSku() {
+        return mainProductSku.containsText("SKU: serum-truth77");
+    }
+
+    public boolean checkMainProductStock() {
+        return mainProductStock.containsText("50 in stock");
+    }
+
+    public boolean verifyProductExistenceWith3Details() {
+        waitABit(6000);
+
+        if (((mainProductSku.containsText("SKU: serum-truth77") || mainProductStock.containsText("50 in stock")))) {
+            System.out.println("work plz");
+            return true;
+        }
+        return false;
+    }
+
 }
+
+
+
+
+
+
+
+
+
+

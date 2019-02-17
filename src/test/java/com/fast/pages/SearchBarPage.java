@@ -27,7 +27,7 @@ public class SearchBarPage extends PageObject {
     @FindBy(id = "#primary h1")
     private WebElementFacade searchResultsFoundMessage;
 
-    @FindBy (className = " button no-results-btn search-btn")
+    @FindBy (css = "button no-results-btn search-btn")
     private WebElementFacade searchAgainButton;
 
     private String searchTermLength = RandomStringUtils.randomAlphabetic(30);
@@ -53,7 +53,6 @@ public class SearchBarPage extends PageObject {
 
     public boolean checkMessageSearchBar() {
         waitFor(errorMessageSearchBar);
-        System.out.println(errorMessageSearchBar);
         return errorMessageSearchBar.containsText("Sorry, but nothing matched your search terms. Please try again with some different keywords.");
     }
 
@@ -68,6 +67,10 @@ public class SearchBarPage extends PageObject {
 
           String listA = listSearchTerms.get(5);
                 typeInto(enterInSearchBarField, listA);
+    }
+    public void clickSearchAgainButton (){
+        waitFor(searchAgainButton);
+        clickOn(searchAgainButton);
     }
 }
 

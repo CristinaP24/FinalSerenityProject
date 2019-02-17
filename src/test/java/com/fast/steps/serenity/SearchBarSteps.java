@@ -15,48 +15,42 @@ public class SearchBarSteps extends ScenarioSteps {
     private String searchTermLength = RandomStringUtils.randomAlphabetic(30);
 
     @Step
-    public void navigateToHomePage (){
+    public void navigateToHomePage() {
         homePage.open();
     }
 
     @Step
-    public void clickSearchBarIcon (){
+    public void clickSearchBarIcon() {
         searchBarPage.clickSearchBarIcon();
     }
 
     @Step
-    public void enterBeanieProductSearchBarField (){
+    public void enterBeanieProductSearchBarField() {
         searchBarPage.enterBeanieProductSearchBarField();
     }
 
     @Step
-    public void clickSearchBarButton (){
+    public void clickSearchBarButton() {
         searchBarPage.clickSearchBarButton();
     }
 
     @Step
-    public void enterSearchTermLength (){
+    public void enterSearchTermLength() {
         searchBarPage.enterSearchTermLength(searchTermLength);
     }
 
     @Step
-    public void checkMessageSearchBar (){
+    public void checkMessageSearchBar() {
         Assert.assertTrue(searchBarPage.checkMessageSearchBar());
     }
-  @Step
-    public void selectProductValidInvalid (){
+
+    @Step
+    public void selectProductValidInvalid() {
         searchBarPage.selectProductValidInvalid();
-  }
+    }
 
-
-
-
-
-
-
-
-
-
+    @Step
+    public void clickSearchAgainButton (){searchBarPage.clickSearchAgainButton();}
 
 
 }

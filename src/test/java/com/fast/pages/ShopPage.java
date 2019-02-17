@@ -30,7 +30,7 @@ public class ShopPage extends PageObject {
     @FindBy(css = "img[srcset*='album']")
     private WebElementFacade viewAlbumProduct;
 
-    @FindBy(css = "a[href*='beanie-with-logo']")
+    @FindBy(css = ".entry-title a[href*='beanie-with-logo']")
     private WebElementFacade viewBeanieWithLogoProduct;
 
     @FindBy(css = "a[href*='belt']")
@@ -79,7 +79,16 @@ public class ShopPage extends PageObject {
     private WebElementFacade addToCartButtonPageProduct;
 
 
-    @FindBy(css = ".woocommerce-loop-product__title")
+    @FindBy (css = "div main nav ul li:first-child")
+    private WebElementFacade clickOn1stPageButton;
+
+    @FindBy (css = "li[id*='menu-item-1642']")
+    private WebElementFacade homePageButton;
+
+
+    @FindBy(css = " .woocommerce-loop-product__title")
+            //@FindBy (css = " .products columns-4")
+            //@FindBy (css = "#main")
     //@FindBy (css = " .products")
             List<WebElementFacade> listProductsPage1;
 
@@ -92,6 +101,7 @@ public class ShopPage extends PageObject {
             if (product.getText().contains("Belt")) {
                 //product.findElement(By.cssSelector("img")).click();
                 clickOn(product);
+                System.out.println("belt");
                 return true;
             }
         }
@@ -100,14 +110,20 @@ public class ShopPage extends PageObject {
 
     public boolean selectHoodieElseProduct() {
         for (WebElementFacade product : listProductsPage1) {
-            if (product.getText().contains("Octopus is not on this page.")){
-                clickOn(product);
-            return true;
-        } else if (product.getText().contains("Hoodie with Zipper")) {
-                System.out.println("y work?");
+            if (product.getText().contains("Belt")) {
                 clickOn(product);
                 return true;
+
+            } else if (product.getText().contains("Hoodie With Zipper")) {
+                System.out.println("prints else if"); //de vazut aici
+                //clickOn(clickOn1stPageButton);
+                clickOn(product);
+                return true;
+            } else {
+                System.out.println("prints the else");
+                clickOn(homePageButton);
             }
+            return true;
         }
         return false;
     }
@@ -133,7 +149,11 @@ public class ShopPage extends PageObject {
 
 
     public void clickOnBeanieWithLogoProduct() {
+        waitABit(3000);
         clickOn(viewBeanieWithLogoProduct);
+    }
+    public void clickOnHoodieWithZipperProduct (){
+        clickOn(view_hoodieWithZipperProduct);
     }
 
     public void addToCartBeanieWithLogo() {
@@ -144,4 +164,8 @@ public class ShopPage extends PageObject {
         waitFor(20);
         clickOn(addToCartButtonPageProduct);}
 
+        public void clickOn1stPageButton (){
+        waitABit(4000);
+        clickOn(clickOn1stPageButton);
+        }
 }

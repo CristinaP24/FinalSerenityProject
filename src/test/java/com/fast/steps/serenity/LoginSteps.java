@@ -16,61 +16,69 @@ public class LoginSteps extends ScenarioSteps {
     MyAccountPage myAccountPage;
 
     @Step
-    public void navigateToHomepage(){
+    public void navigateToHomepage() {
         getDriver().manage().window().maximize(); //mareste pag
         homePage.open();
     }
 
     @Step
-    public void goToLogin(){
+    public void goToLogin() {
         homePage.clickMyAccountButton();
     }
 
     @Step
-    public void setUser(){
+    public void setUser() {
         loginPage.setEmailField();
     }
 
     @Step
-    public void setUserInvalidCaps(){
+    public void setUserInvalidCaps() {
         loginPage.setInvalidEmailCaps();
     }
 
     @Step
-    public void setUserInvalid257 () {loginPage.setUserInvalid257 ();}
+    public void setUserInvalid257() {
+        loginPage.setUserInvalid257();
+    }
 
     @Step
-    public void setPassword(){
+    public void setPassword() {
         loginPage.setPasswordField();
     }
 
 
     @Step
-    public void clickOnLoginButton(){
+    public void clickOnLoginButton() {
         loginPage.clickLoginButton();
     }
 
     @Step
-    public void checkLoggedIn(){
+    public void checkLoggedIn() {
         Assert.assertTrue(myAccountPage.checkLoggedIn());
     }
 
     @Step
-    public void checkInvalidUsername257(){
+    public void checkInvalidUsername257() {
         Assert.assertTrue(myAccountPage.checkInvalidUsername257());
     }
 
     @Step
-    public void errorMessageLogin (){Assert.assertTrue(loginPage.errorMessageLogin());}
+    public void errorMessageLogin() {
+        Assert.assertTrue(loginPage.errorMessageLogin());
+    }
 
     @Step
-    public void InvalidLogInWithIf (){loginPage.InvalidLogInWithIf();}
+    public void InvalidLogInWithIf() {
+        loginPage.InvalidLogInWithIf();
+    }
 
     @Step
-    public void setEmailField2 (){loginPage.setEmailField2();}
+    public void setEmailField2() {
+        loginPage.setEmailField2();
+    }
 
     @StepGroup
-    public void login(){
+    public void login() {
         navigateToHomepage();
         goToLogin();
         setUser();

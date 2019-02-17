@@ -33,10 +33,11 @@ public class RegisterSteps extends ScenarioSteps {
     public void enterRegisterEmailStr() {
         registerPage.enterRegisterEmailStr(email);
     }
+
     @Step
-    public void enterRegisterPassword (){
+    public void enterRegisterPassword() {
         registerPage.enterRegisterPassword();
-   }
+    }
 
     @Step
     public void registerButton() {

@@ -40,52 +40,78 @@ public class ReviewSteps extends ScenarioSteps {
     }
 
     @Step
-    public void clickLoginButton (){reviewPage.clickLoginButton();}
+    public void clickLoginButton() {
+        reviewPage.clickLoginButton();
+    }
 
     @Step
-    public void clickOnShopButton (){reviewPage.clickOnShopButton();}
+    public void clickOnShopButton() {
+        reviewPage.clickOnShopButton();
+    }
 
     @Step
 
-    public void viewBeltProduct (){reviewPage.viewBeltProduct();}
+    public void viewBeltProduct() {
+        reviewPage.viewBeltProduct();
+    }
 
     @Step
-    public void clickReviewButton (){reviewPage.clickReviewButton();}
+    public void clickReviewButton() {
+        reviewPage.clickReviewButton();
+    }
 
     @Step
-    public void clickStar3RatingProduct (){reviewPage.clickStar3RatingProduct();}
+    public void clickStar3RatingProduct() {
+        reviewPage.clickStar3RatingProduct();
+    }
 
     @Step
-    public void addValidReview (){reviewPage.addValidReview();}
+    public void addValidReview() {
+        reviewPage.addValidReview();
+    }
 
     @Step
-    public void clickSubmitReviewButton (){reviewPage.clickSubmitButtonReview();}
+    public void clickSubmitReviewButton() {
+        reviewPage.clickSubmitButtonReview();
+    }
 
     @Step
-    public void clickStar2RatingProduct(){reviewPage.clickStar2RatingProduct();}
+    public void clickStar2RatingProduct() {
+        reviewPage.clickStar2RatingProduct();
+    }
 
     @Step
-    public void viewCapProduct (){reviewPage.viewCapProduct();}
+    public void viewCapProduct() {
+        reviewPage.viewCapProduct();
+    }
 
     @Step
-    public void addSpaceReview (){reviewPage.addSpaceReview();}
+    public void addSpaceReview() {
+        reviewPage.addSpaceReview();
+    }
 
     @Step
-    public void clickBackButtonInvalidReview (){reviewPage.backButtonInvalidReview();}
+    public void clickBackButtonInvalidReview() {
+        reviewPage.backButtonInvalidReview();
+    }
 
     @Step
-    public void clickSubmitButtonReview (){reviewPage.clickSubmitButtonReview();}
+    public void clickSubmitButtonReview() {
+        reviewPage.clickSubmitButtonReview();
+    }
 
     @Step
-    public void errorMessageReviewStrong ()
-    {
-        Assert.assertTrue(reviewPage.errorMessageReviewStrong());}
+    public void errorMessageReviewStrong() {
+        Assert.assertTrue(reviewPage.errorMessageReviewStrong());
+    }
 
     @Step
-    public void ifCheckSpaceReview (){reviewPage.ifCheckSpaceReview();}
+    public void ifCheckSpaceReview() {
+        reviewPage.ifCheckSpaceReview();
+    }
 
     @StepGroup
-    public void validReview (){
+    public void validReview() {
         navigateToHomepage();
         goToLogin();
         clickPasswordMyAccountField();
@@ -99,7 +125,6 @@ public class ReviewSteps extends ScenarioSteps {
         addValidReview();
         clickSubmitReviewButton();
     }
-
 
 
 }

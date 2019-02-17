@@ -56,20 +56,27 @@ public class ShopSteps extends ScenarioSteps {
     }
 
     @Step
+    public void clickOnHoodieWithZipperProduct (){shopPage.clickOnHoodieWithZipperProduct();}
+
+    @Step
     public void addToCartBeanieWithLogo() {
         shopPage.addToCartBeanieWithLogo();
     }
 
     @Step
-    public void shoppingCartIcon (){
+    public void shoppingCartIcon() {
         shopPage.shoppingCartIcon();
     }
 
     @Step
-    public void addToCartButtonPageProduct (){
+    public void addToCartButtonPageProduct() {
         shopPage.addToCartButtonPageProduct();
     }
 
+    @Step
+    public void clickOn1stPageButton (){
+        shopPage.clickOn1stPageButton();
+    }
 
 
 }

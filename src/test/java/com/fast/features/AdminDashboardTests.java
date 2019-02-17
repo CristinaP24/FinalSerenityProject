@@ -1,7 +1,7 @@
 package com.fast.features;
 
+import com.fast.pages.HomePage;
 import com.fast.steps.serenity.AdminDashboardSteps;
-import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -17,6 +17,7 @@ public class AdminDashboardTests {
 
     @Steps
     AdminDashboardSteps adminDashboardSteps;
+   HomePage homePage;
 
     @Test
     public void selectStatusOnHold() {
@@ -28,7 +29,7 @@ public class AdminDashboardTests {
         adminDashboardSteps.selectFirst5Orders();
         adminDashboardSteps.selectOrdersDropDown();
         adminDashboardSteps.applyButton();
-        //adminDashboardSteps.checkOnHoldStatusChangeMessage();
+        adminDashboardSteps.checkOnHoldStatusChangeMessage();
     }
     @Test
     public void createProduct(){
@@ -54,6 +55,15 @@ public class AdminDashboardTests {
         adminDashboardSteps.clickAccessoriesCategory();
         adminDashboardSteps.enterProductNameField();
         adminDashboardSteps.setClickPublishButton();
+        adminDashboardSteps.checkProductPublished();
+        adminDashboardSteps.viewPublishedProduct();
+
+
+//        adminDashboardSteps.checkMainProductTitle();
+//        adminDashboardSteps.checkMainProductSku();
+//        adminDashboardSteps.checkMainProductStock();
+        adminDashboardSteps.verifyProductExistenceWith3Details();
+        homePage.clickMyAccountButton();
     }
 }
 

@@ -67,31 +67,31 @@ public class MyAccountSteps extends ScenarioSteps {
         Assert.assertTrue(myAccountPage.checkPasswordMyAccountField());
     }
 
-    @StepGroup
-    public void validMyAccountCheck() {
-        navigateToHomepage();
-        goToLogin();
-        setUser();
-        checkPasswordMyAccount();
-        //clickPasswordMyAccountField();
-        clickOnLoginButton();
-        checkLoggedIn();
-        clickOnAccountDetailsButton();
-        clickAccountDetails();
-    }
-
-    @StepGroup
-    public void validMyAccountPasswordCheck() {
-        navigateToHomepage();
-        goToLogin();
-        setUser();
-        checkPasswordMyAccount();
-        //clickPasswordMyAccountField();
-        clickOnLoginButton();
-        checkLoggedIn();
-        clickOnAccountDetailsButton();
-        clickAccountDetails();
-        checkPasswordMyAccount();
-    }
+    //@StepGroup
+//    public void validMyAccountCheck() {
+//        navigateToHomepage();
+//        goToLogin();
+//        setUser();
+//        checkPasswordMyAccount();
+//        //clickPasswordMyAccountField();
+//        clickOnLoginButton();
+//        checkLoggedIn();
+//        clickOnAccountDetailsButton();
+//        clickAccountDetails();
+//    }
+//
+//    @StepGroup
+//    public void validMyAccountPasswordCheck() {
+//        navigateToHomepage();
+//        goToLogin();
+//        setUser();
+//        checkPasswordMyAccount();
+//        //clickPasswordMyAccountField();
+//        clickOnLoginButton();
+//        checkLoggedIn();
+//        clickOnAccountDetailsButton();
+//        clickAccountDetails();
+//        checkPasswordMyAccount();
+//    }
 
 }

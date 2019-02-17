@@ -28,6 +28,7 @@ public void selectBeltForList (){
     public void selectHoodieElseProduct (){
     shopSteps.validLogin();
     shopSteps.clickOnShopButtonMainMenu();
+   // shopSteps.clickOn1stPageButton();
     shopSteps.selectHoodieElseProduct();
     shopSteps.addToCartButtonPageProduct();
     shopSteps.shoppingCartIcon();

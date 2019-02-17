@@ -59,90 +59,129 @@ public class AdminDashboardSteps extends ScenarioSteps {
     }
 
     @Step
-    public boolean checkOnHoldStatusChangeMessage() {
+    public void checkOnHoldStatusChangeMessage() {
         Assert.assertTrue(adminDashboardPage.checkStatusChangeMessage());
-        return true;
     }
 
+
     @Step
-    public void selectMainMenuCategories (){
+    public void selectMainMenuCategories() {
         adminDashboardPage.selectMainMenuCategories();
     }
 
     @Step
-    public void clickAddNewProductButton (){
+    public void clickAddNewProductButton() {
         adminDashboardPage.clickAddNewProductButton();
     }
 
     @Step
-    public void enterProductNameField (){
+    public void enterProductNameField() {
         adminDashboardPage.enterProductNameField();
     }
 
-//    @Step
-//    public void enterDescriptionField (){
-//        adminDashboardPage.enterDescriptionField();
-//    }
-   @Step
-    public void enterRegularPriceField (){
+
+    @Step
+    public void enterRegularPriceField() {
         adminDashboardPage.enterRegularPriceField();
-   }
-   @Step
-    public void enterSalePriceField (){
+    }
+
+    @Step
+    public void enterSalePriceField() {
         adminDashboardPage.enterSalePriceField();
-   }
-   @Step
-    public void inventoryCategory (){
+    }
+
+    @Step
+    public void inventoryCategory() {
         adminDashboardPage.inventoryCategory();
-   }
-   @Step
-   public void skuCode (){
+    }
+
+    @Step
+    public void skuCode() {
         adminDashboardPage.skuCode();
-   }
+    }
 
-   @Step
-    public void manageStockCheckBox (){
+    @Step
+    public void manageStockCheckBox() {
         adminDashboardPage.manageStockCheckBox();
-   }
+    }
 
-   @Step
-    public void setStockNumber (){
+    @Step
+    public void setStockNumber() {
         adminDashboardPage.setStockNumber();
-   }
+    }
 
-   @Step
-    public void attributesCategory (){
+    @Step
+    public void attributesCategory() {
         adminDashboardPage.attributesCategory();
-   }
+    }
 
-   @Step
-    public void customProductAttributeDd (){
+    @Step
+    public void customProductAttributeDd() {
         adminDashboardPage.customProductAttributeDd();
-   }
+    }
 
-   @Step
-    public void selectColorAttribute (){
+    @Step
+    public void selectColorAttribute() {
         adminDashboardPage.selectColorAttribute();
-   }
+    }
 
-   @Step
-   public void addAttributeProdButton (){
+    @Step
+    public void addAttributeProdButton() {
         adminDashboardPage.addAttributeProdButton();
-   }
-   @Step
-    public void saveAtrributesButton (){
+    }
+
+    @Step
+    public void saveAtrributesButton() {
         adminDashboardPage.saveAtrributesButton();
-   }
-   @Step
-    public void selectColorDd (){
+    }
+
+    @Step
+    public void selectColorDd() {
         adminDashboardPage.selectColorDd();
-   }
-   @Step
-    public void clickAccessoriesCategory (){
+    }
+
+    @Step
+    public void clickAccessoriesCategory() {
         adminDashboardPage.clickAccessoriesCategory();
-   }
-   @Step
-    public void setClickPublishButton (){
+    }
+
+    @Step
+    public void setClickPublishButton() {
         adminDashboardPage.setClickPublishButton();
-   }
+    }
+
+    @Step
+    public void checkProductPublished() {
+        Assert.assertTrue(adminDashboardPage.checkProductPublished());
+
+    }
+
+    @Step
+    public void viewPublishedProduct() {
+        adminDashboardPage.viewPublishedProduct();
+    }
+
+//    @Step
+//    public void checkMainProductTitle() {
+//        Assert.assertTrue(adminDashboardPage.checkMainProductTitle());
+//
+//    }
+//
+//    @Step
+//    public void checkMainProductSku() {
+//        Assert.assertTrue(adminDashboardPage.checkMainProductSku());
+//
+//    }
+//
+//    @Step
+//    public void checkMainProductStock() {
+//        Assert.assertTrue(adminDashboardPage.checkMainProductStock());
+//
+//    }
+
+    @Step
+    public void verifyProductExistenceWith3Details() {
+        adminDashboardPage.verifyProductExistenceWith3Details();
+    }
+
 }
