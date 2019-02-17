@@ -86,10 +86,10 @@ public class ShopPage extends PageObject {
     private WebElementFacade homePageButton;
 
 
-    @FindBy(css = " .woocommerce-loop-product__title")
+    //@FindBy(css = " .woocommerce-loop-product__title")
             //@FindBy (css = " .products columns-4")
             //@FindBy (css = "#main")
-    //@FindBy (css = " .products")
+    @FindBy (css = " .products")
             List<WebElementFacade> listProductsPage1;
 
     public void clickOnShopButtonMainMenu() {
@@ -110,7 +110,7 @@ public class ShopPage extends PageObject {
 
     public boolean selectHoodieElseProduct() {
         for (WebElementFacade product : listProductsPage1) {
-            if (product.getText().contains("Belt")) {
+            if (product.getText().contains("Octopus is not on this page.")) {
                 clickOn(product);
                 return true;
 
@@ -130,7 +130,7 @@ public class ShopPage extends PageObject {
 
     public boolean selectCapElseIfProduct() {
         for (WebElementFacade product : listProductsPage1) {
-            if (product.getText().contains("Fork is not on this page.")) {
+            if (product.getText().contains("Fork is not on the page.")) {
                 clickOn(product);
                 return true;
             } else if (product.getText().contains("Neither is knife.")) {
@@ -140,6 +140,7 @@ public class ShopPage extends PageObject {
             } else {
                 typeInto(searchBarLateral, "Cap");
                 return true;
+
             }
         }
         return false;
