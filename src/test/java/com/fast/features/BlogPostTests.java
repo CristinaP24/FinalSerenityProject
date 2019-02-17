@@ -20,7 +20,7 @@ public class BlogPostTests {
     public void logoutAtWordInComment() {
         blogPostSteps.validLogin();
         blogPostSteps.clickBlogButton();
-        blogPostSteps.typeCommentBlogField();
+        blogPostSteps.typeCommentBlogFieldPups();
         blogPostSteps.clickPostBlogCommentButton();
         blogPostSteps.confirmLoginBlogMessage();
         blogPostSteps.logutAtWordinComment();

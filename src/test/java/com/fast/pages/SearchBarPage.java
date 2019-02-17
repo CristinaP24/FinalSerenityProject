@@ -27,7 +27,7 @@ public class SearchBarPage extends PageObject {
     @FindBy(id = "#primary h1")
     private WebElementFacade searchResultsFoundMessage;
 
-    @FindBy (css = "button no-results-btn search-btn")
+    @FindBy (css = " no-results-btn search-btn")
     private WebElementFacade searchAgainButton;
 
     private String searchTermLength = RandomStringUtils.randomAlphabetic(30);
@@ -49,6 +49,7 @@ public class SearchBarPage extends PageObject {
 
     public void enterSearchTermLength(String searchTermLength) {
         typeInto(enterInSearchBarField, searchTermLength);
+        System.out.println("should w");
     }
 
     public boolean checkMessageSearchBar() {
@@ -69,8 +70,10 @@ public class SearchBarPage extends PageObject {
                 typeInto(enterInSearchBarField, listA);
     }
     public void clickSearchAgainButton (){
-        waitFor(searchAgainButton);
         clickOn(searchAgainButton);
+        waitFor(searchAgainButton);
+        typeInto(searchAgainButton,"Belt is always here for me.");
+
     }
 }
 

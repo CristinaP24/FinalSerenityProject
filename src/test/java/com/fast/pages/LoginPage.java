@@ -65,12 +65,6 @@ public class LoginPage extends PageObject {
         waitFor(emailField);
         typeInto(emailField, "hermg@gmail.com");
     }
-
-
-
-
-
-
 }
 
 

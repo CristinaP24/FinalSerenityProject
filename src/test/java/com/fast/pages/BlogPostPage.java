@@ -45,11 +45,11 @@ public class BlogPostPage extends PageObject {
     }
 
     public void typeCommentBlogField() {
-        typeInto(commentBlogField, "3 Puppies");
-    }
+        typeInto(commentBlogField, "ok ok ok see what to write");
+    } //3 Puppies
 
     public void typeCommentBlogFieldPups() {
-        typeInto(commentBlogField, "Pups, just nice Pups.");
+        typeInto(commentBlogField, "P3");
     }
 
     public void typeCommentBlogFieldpups() {
@@ -91,21 +91,23 @@ public class BlogPostPage extends PageObject {
 
     public boolean logutAtWordinComment() {
 
-        if (commentBlogField.getText().contains("Puppies 3")) { //de verificat
+        if (commentBlogField.getText().contains("P3")) { //de verificat
             clickOn(logoutRedirectLink);
+            System.out.println("P3");
             return true;
-        } else if (commentBlogField.getText().contains("puppie")) {
+        } else if (commentBlogField.getText().contains("ok ok ok see what to write")) {
             clickOn(logoutRedirectLink);
+            System.out.println("ok ok ok see what to write");
             return true;
-        } else if (commentBlogField.getText().contains("Pups")) {
+        } else if (commentBlogField.getText().contains("Can't write diary notes here")) {
             clickOn(logoutRedirectLink);
+            System.out.println("Can't write diary notes here");
             return true;
-        } else if (commentBlogField.getText().contains("pups")) {
+        } else {
             clickOn(logoutRedirectLink);
+            System.out.println("the ELSE");
             return true;
+
         }
-    return false;
     }
-
-
 }

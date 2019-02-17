@@ -9,7 +9,6 @@ import org.openqa.selenium.By;
 
 import java.util.List;
 
-//import static jdk.nashorn.internal.objects.NativeJava.type;
 
 @DefaultUrl("http://qa3.fasttrackit.org:8008/shop")
 
@@ -21,50 +20,23 @@ public class ShopPage extends PageObject {
     @FindBy(css = "post-48 product type-product status-publish has-post-thumbnail product_cat-accessories-clothing  instock sale shipping-taxable purchasable product-type-simple")
     private WebElementFacade viewtBeanieProduct;
 
-    @FindBy(css = "post-1990 product type-product status-publish product_cat-uncategorized  instock shipping-taxable product-type-simple")
-    private WebElementFacade readMore_AtmBWycWProduct;
-
     @FindBy(css = "a[href*='cap']")
     private WebElementFacade viewCapProduct;
 
     @FindBy(css = "img[srcset*='album']")
     private WebElementFacade viewAlbumProduct;
 
-    @FindBy(css = ".entry-title a[href*='beanie-with-logo']")
+    @FindBy(css = " .entry-title a[href*='beanie-with-logo']")
     private WebElementFacade viewBeanieWithLogoProduct;
 
     @FindBy(css = "a[href*='belt']")
     private WebElementFacade viewBeltProduct;
-
-    @FindBy(className = "post-2156 product type-product status-publish product_cat-uncategorized  instock sale shipping-taxable purchasable product-type-simple")
-    private WebElementFacade view_bzZDKvQo_Product7;
-
-    @FindBy(css = "a[href*='bzzdkvqo-2']")
-    private WebElementFacade view_bzZDKvQo_Product78;
-
-    @FindBy(css = "post-2051 product type-product status-publish product_cat-uncategorized first instock sale shipping-taxable purchasable product-type-simple")
-    private WebElementFacade view_dYhklAZh_Product;
-
-    @FindBy(css = "dYhklAZh")
-    private WebElementFacade view_EMTxZNTx_Product;
-
-    @FindBy(css = "a[href*='gamaiehg']")
-    private WebElementFacade view_gamiehg_Product;
-
-    @FindBy(css = "a[href*='hghjg'] h2")
-    private WebElementFacade readMore_hghjg_Product;
-
-    @FindBy(css = "img[srcset*='hoodie-2']")
-    private WebElementFacade selectOptions_Hoodie;
 
     @FindBy(css = "a[href*='hoodie-with-logo']")
     private WebElementFacade view_hoodieWithLogoProduct;
 
     @FindBy(css = "a[href*='hoodie-with-zipper']")
     private WebElementFacade view_hoodieWithZipperProduct;
-
-    @FindBy(css = "a[href*='huwaxbto']")
-    private WebElementFacade view_huwaxbto_Product;
 
     @FindBy(css = "button[name*='add-to-cart']")
     private WebElementFacade addToCartButtonSingleProduct;
@@ -77,7 +49,6 @@ public class ShopPage extends PageObject {
 
     @FindBy (css = ".single_add_to_cart_button")
     private WebElementFacade addToCartButtonPageProduct;
-
 
     @FindBy (css = "div main nav ul li:first-child")
     private WebElementFacade clickOn1stPageButton;

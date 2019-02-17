@@ -161,23 +161,13 @@ public class AdminDashboardSteps extends ScenarioSteps {
         adminDashboardPage.viewPublishedProduct();
     }
 
-//    @Step
-//    public void checkMainProductTitle() {
-//        Assert.assertTrue(adminDashboardPage.checkMainProductTitle());
-//
-//    }
-//
-//    @Step
-//    public void checkMainProductSku() {
-//        Assert.assertTrue(adminDashboardPage.checkMainProductSku());
-//
-//    }
-//
-//    @Step
-//    public void checkMainProductStock() {
-//        Assert.assertTrue(adminDashboardPage.checkMainProductStock());
-//
-//    }
+
+    @Step
+    public void checkMainProductSku() {
+        Assert.assertTrue(adminDashboardPage.checkMainProductSku());
+
+    }
+
 
     @Step
     public void verifyProductExistenceWith3Details() {

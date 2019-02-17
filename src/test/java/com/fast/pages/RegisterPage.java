@@ -9,29 +9,31 @@ import net.thucydides.core.pages.PageObject;
 
 public class RegisterPage extends PageObject {
 
-    @FindBy (css = "input[id*='reg_email']")
+    @FindBy(css = "input[id*='reg_email']")
     private WebElementFacade registerEmailField;
 
-    @FindBy (css = "#menu-item-1730")
+    @FindBy(css = "#menu-item-1730")
     private WebElementFacade myAccountButton;
 
-    @FindBy (css = "input[id*='reg_password']")
+    @FindBy(css = "input[id*='reg_password']")
     private WebElementFacade registerPasswordField;
 
-    @FindBy (css = "button[value*='Register']")
+    @FindBy(css = "button[value*='Register']")
     private WebElementFacade registerButton;
 
-    public void clickMyAccountButton (){clickOn(myAccountButton);}
+    public void clickMyAccountButton() {
+        clickOn(myAccountButton);
+    }
 
-    public void enterRegisterEmailStr (String registerEmail){
+    public void enterRegisterEmailStr(String registerEmail) {
         typeInto(registerEmailField, registerEmail);
     }
 
-    public void enterRegisterPassword (){
+    public void enterRegisterPassword() {
         typeInto(registerPasswordField, "whateverpassasapass237");
     }
 
-    public void registerButton (){
+    public void registerButton() {
         clickOn(registerButton);
     }
 

@@ -1,5 +1,6 @@
 package com.fast.features;
 
+import com.fast.pages.HomePage;
 import com.fast.steps.serenity.CartSteps;
 import com.fast.steps.serenity.ShopSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
@@ -18,11 +19,13 @@ public class ShopTests  {
     ShopSteps shopSteps;
     CartSteps cartSteps;
 
+
 @Test
 public void selectBeltForList (){
     shopSteps.validLogin();
     shopSteps.clickOnShopButtonMainMenu();
     shopSteps.selectBeltForProduct();
+
 }
 @Test
     public void selectHoodieElseProduct (){

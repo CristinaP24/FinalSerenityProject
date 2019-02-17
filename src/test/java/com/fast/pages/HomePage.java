@@ -13,26 +13,25 @@ public class HomePage extends PageObject {
     @FindBy(css = "#menu-item-1730")
     private WebElementFacade myAccountButton;
 
-    @FindBy (css = "li[id*='menu-item-1642']")
+    @FindBy(css = "li[id*='menu-item-1642']")
     private WebElementFacade homePageButton;
 
-    @FindBy (css = "a[href*='checkout']")
+    @FindBy(css = "a[href*='checkout']")
     private WebElementFacade checkoutHomePageButton;
 
-    public void clickMyAccountButton(){
+    public void clickMyAccountButton() {
         withTimeoutOf(15, TimeUnit.SECONDS).waitFor(myAccountButton);
         clickOn(myAccountButton);
     }
-public void homePageButton (){
+
+    public void homePageButton() {
         clickOn(homePageButton);
-}
-
-public void checkoutHomePageButton (){
-        clickOn(checkoutHomePageButton);
-}
-
-    //public void clickLoginLink(){
-       // clickOn(logInLink);
     }
+
+    public void checkoutHomePageButton() {
+        clickOn(checkoutHomePageButton);
+    }
+
+}
 
 

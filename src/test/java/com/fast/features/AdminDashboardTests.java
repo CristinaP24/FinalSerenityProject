@@ -17,7 +17,7 @@ public class AdminDashboardTests {
 
     @Steps
     AdminDashboardSteps adminDashboardSteps;
-   HomePage homePage;
+    HomePage homePage;
 
     @Test
     public void selectStatusOnHold() {
@@ -31,8 +31,9 @@ public class AdminDashboardTests {
         adminDashboardSteps.applyButton();
         adminDashboardSteps.checkOnHoldStatusChangeMessage();
     }
+
     @Test
-    public void createProduct(){
+    public void createProduct() {
         adminDashboardSteps.validAdminLogin();
         adminDashboardSteps.checkLoggedInAdmin();
         adminDashboardSteps.selectDashboardRootMenu();
@@ -57,11 +58,7 @@ public class AdminDashboardTests {
         adminDashboardSteps.setClickPublishButton();
         adminDashboardSteps.checkProductPublished();
         adminDashboardSteps.viewPublishedProduct();
-
-
-//        adminDashboardSteps.checkMainProductTitle();
-//        adminDashboardSteps.checkMainProductSku();
-//        adminDashboardSteps.checkMainProductStock();
+        adminDashboardSteps.checkMainProductSku();
         adminDashboardSteps.verifyProductExistenceWith3Details();
         homePage.clickMyAccountButton();
     }

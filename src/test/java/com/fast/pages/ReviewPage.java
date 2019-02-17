@@ -113,7 +113,7 @@ public class ReviewPage extends PageObject {
 
     public boolean ifCheckSpaceReview() {
 
-        if (errorMessageReviewStrong()) { //de corectat
+        if (errorMessageReviewStrong()) {
             backButtonInvalidReview();
         }
         return true;

@@ -33,8 +33,8 @@ public class AdminDashboardPage extends PageObject {
     @FindBy(css = "#order_date .sorting-indicator")
     private WebElementFacade sortingDateArrow;
 
-   // @FindBy(css = "th.check-column")
-    @FindBy (css = "#cb")
+    // @FindBy(css = "th.check-column")
+    @FindBy(css = "#cb")
     private WebElementFacade checkBoxTick;
 
     @FindBy(css = " .order_number column-order_number has-row-actions column-primar")
@@ -63,7 +63,7 @@ public class AdminDashboardPage extends PageObject {
     @FindBy(css = "#titlewrap [type=text]")
     private WebElementFacade enterProductNameField;
 
-      @FindBy(css = "#the-list")
+    @FindBy(css = "#the-list")
     List<WebElementFacade> listOrders;
 
     @FindBy(id = "_regular_price")
@@ -198,7 +198,6 @@ public class AdminDashboardPage extends PageObject {
         return false;
 
     }
-
     public void clickAddNewProductButton() {
         clickOn(addNewProductButton);
     }
@@ -211,15 +210,12 @@ public class AdminDashboardPage extends PageObject {
     public void enterRegularPriceField() {
         typeInto(enterRegularPriceField, "25");
     }
-
     public void enterSalePriceField() {
         typeInto(enterSalePriceField, "20");
     }
-
     public void inventoryCategory() {
         clickOn(inventoryCategory);
     }
-
     public void skuCode() {
         typeInto(skuCode, "serum-truth77");
     }
@@ -227,7 +223,6 @@ public class AdminDashboardPage extends PageObject {
     public void manageStockCheckBox() {
         clickOn(manageStockCheckBox);
     }
-
     public void setStockNumber() {
         typeInto(setStockNumber, "50");
     }
@@ -281,23 +276,16 @@ public class AdminDashboardPage extends PageObject {
         clickOn(viewPublishedProduct);
     }
 
-    public boolean checkMainProductTitle() {
-        return mainProductTitle.containsText("Veritaserum Potion");
-    }
 
     public boolean checkMainProductSku() {
         return mainProductSku.containsText("SKU: serum-truth77");
     }
 
-    public boolean checkMainProductStock() {
-        return mainProductStock.containsText("50 in stock");
-    }
 
     public boolean verifyProductExistenceWith3Details() {
         waitABit(6000);
 
         if (((mainProductSku.containsText("SKU: serum-truth77") || mainProductStock.containsText("50 in stock")))) {
-            System.out.println("work plz");
             return true;
         }
         return false;
