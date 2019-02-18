@@ -70,7 +70,6 @@ public class BlogPostPage extends PageObject {
 
         if (commentBlogFieldRandomText.equals(commentBlogFieldRandomText)){
             clickOn(logoutRedirectLink);
-        System.out.println("string IF");
         return true;
         }
         return false;

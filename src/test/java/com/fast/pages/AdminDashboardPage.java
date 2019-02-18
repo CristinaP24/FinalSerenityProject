@@ -33,7 +33,8 @@ public class AdminDashboardPage extends PageObject {
     @FindBy(css = "#order_date .sorting-indicator")
     private WebElementFacade sortingDateArrow;
 
-    @FindBy(css = "#cb")
+    //@FindBy(css = "tr #cb")
+    @FindBy(css = ".iedit .check-column [type='checkbox']")
     private WebElementFacade checkBoxTick;
 
     @FindBy(css = " .order_number column-order_number has-row-actions column-primar")
@@ -153,8 +154,8 @@ public class AdminDashboardPage extends PageObject {
     }
 
     public boolean checkStatusChangeMessage() {
-        waitABit(5000);
-        return statusChangeMessage.containsText(" order statuses changed.");
+        waitFor(statusChangeMessage);
+        return statusChangeMessage.containsText("changed.");
     }
 
     public void selectDashboardRootMenu() {

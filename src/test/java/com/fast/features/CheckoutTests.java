@@ -1,6 +1,7 @@
 package com.fast.features;
 
 import com.fast.steps.serenity.CheckoutSteps;
+import com.fast.steps.serenity.MyAccountSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -14,12 +15,15 @@ public class CheckoutTests {
     private WebDriver driver;
     @Steps
     private CheckoutSteps checkoutSteps;
+    @Steps
+    private MyAccountSteps myAccountSteps;
 
     @Test
     public void validCheckout() {
         checkoutSteps.navigateToHomepage();
         checkoutSteps.goToLogin();
         checkoutSteps.emailMyAccountField();
+        myAccountSteps.setPassword();
         checkoutSteps.checkPasswordMyAccountField();
         checkoutSteps.clickLoginButton();
         checkoutSteps.clickShopButton();
