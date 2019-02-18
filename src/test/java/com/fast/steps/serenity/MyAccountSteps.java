@@ -49,6 +49,15 @@ public class MyAccountSteps extends ScenarioSteps {
     public void checkLoggedIn() {
         Assert.assertTrue(myAccountPage.checkLoggedIn());
     }
+    @Step
+    public void checkFirstNameFieldMyAccount(){
+        Assert.assertTrue(myAccountPage.checkFirstNameFieldMyAccount());
+    }
+
+    @Step
+    public void checkLastNameFieldMyAccount(){
+        Assert.assertTrue(myAccountPage.checkLastNameFieldMyAccount());
+    }
 
     @Step
     public void clickOnAccountDetailsButton() {

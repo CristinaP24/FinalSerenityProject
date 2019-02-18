@@ -26,11 +26,12 @@ public class SearchBarTests {
         searchBarSteps.navigateToHomePage();
         searchBarSteps.clickSearchBarIcon();
         searchBarSteps.enterBeanieProductSearchBarField();
-        searchBarSteps.clickSearchBarButton(); //cont?
+        searchBarSteps.clickSearchBarButton();
         shopSteps.clickOnBeanieWithLogoProduct();
         cartSteps.clickAddToCartButton();
         cartSteps.addProductCartConfirmMessage();
         cartSteps.clickAddToCartButton();
+        cartSteps.viewShoppingCartButton();
         cartSteps.removeProductFromCart();
 
     }
@@ -42,8 +43,7 @@ public class SearchBarTests {
         searchBarSteps.enterSearchTermLength();
         searchBarSteps.clickSearchBarButton();
         searchBarSteps.checkMessageSearchBar();
-        searchBarSteps.clearSearchBarField();
-        searchBarSteps.clickSearchAgainButton(); //ce e cu butonul
+        searchBarSteps.enterValidTermSearchBar();
 
 
 

@@ -5,10 +5,13 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.pages.PageObject;
+import org.apache.commons.lang3.RandomStringUtils;
 
 @DefaultUrl("http://qa3.fasttrackit.org:8008")
 
 public class BlogPostPage extends PageObject {
+
+    HomePage homePage;
     @FindBy(css = "a[href*='blog']")
     private WebElementFacade blogButton;
 
@@ -30,7 +33,7 @@ public class BlogPostPage extends PageObject {
     @FindBy(css = "body[id*='error-page']")
     private WebElementFacade timeOutBlogCommentMessage;
 
-    @FindBy(css = "a[href*='back']")
+    @FindBy(css = "#error-page a[href*='back']")
     private WebElementFacade backBlogButton;
 
     @FindBy(css = "a[href*='wp-admin/profile']")
@@ -39,44 +42,16 @@ public class BlogPostPage extends PageObject {
     @FindBy(css = "a[href*='logout&redirect']")
     private WebElementFacade logoutRedirectLink;
 
+    @FindBy(css = "body#error-page")
+    private WebElementFacade duplicatePostErrorMessage;
 
     public void clickOnBlogButton() {
         clickOn(blogButton);
     }
 
-    public void typeCommentBlogFieldP2() {
-        typeInto(commentBlogField, "P2");
-    }
-
-    public void typeCommentBlogFieldP3() {
-        typeInto(commentBlogField, "P3");
-    }
-
-    public void typeCommentBlogFieldP4() {
-        typeInto(commentBlogField, "P4");
-    }
-
-    public void typeNameBlogField() {
-        typeInto(nameBlogField, "Whaterver Name It Is");
-    }
-
-    public void typeEmailBlogField() {
-        typeInto(emailBlogField, "puppie_lover@yahoo.com");
-    }
-
     public void clickPostBlogCommentButton() {
         clickOn(postBlogCommentButton);
         waitABit(3000);
-    }
-
-    public boolean confirmBlogCommentMessage() {
-        waitFor(confirmBlogCommentMessage);
-        return confirmBlogCommentMessage.containsText("Your email address will not be published. Required fields are marked *");
-    }
-
-    public boolean confirmLoginBlogMessage() {
-        waitFor(confirmLoginBlogMessage);
-        return confirmLoginBlogMessage.containsText("Logged in as hermioneg");
     }
 
 
@@ -85,29 +60,27 @@ public class BlogPostPage extends PageObject {
         return timeOutBlogCommentMessage.containsText("You are posting comments too quickly. Slow down.");
     }
 
-    public void clickBackBlogButton() {
-        clickOn(backBlogButton);
+    public boolean duplicatePostErrorMessage() {
+        waitFor(duplicatePostErrorMessage);
+        return duplicatePostErrorMessage.containsText("Duplicate comment detected; it looks as though you’ve already said that!");
     }
 
-    public boolean logutAtWordinComment() {
 
-        if (commentBlogField.getText().contains("P")) { //de verificat
+    public boolean logutAtRandomString() {
+
+        if (commentBlogFieldRandomText.equals(commentBlogFieldRandomText)){
             clickOn(logoutRedirectLink);
-            System.out.println("P2 IF");
-            return true;
-        } else if (commentBlogField.getText().contains("P4")) {
-            clickOn(logoutRedirectLink);
-            System.out.println("P4 ELSE IF");
-            return true;
-        } else if (commentBlogField.getText().contains("P5")) {
-            clickOn(logoutRedirectLink);
-            System.out.println("P5 ELSE IF");
-            return true;
-        } else {
-            clickOn(logoutRedirectLink);
-            System.out.println("the ELSE");
-            return true;
+        System.out.println("string IF");
+        return true;
         }
+        return false;
+    }
+
+    private String commentBlogFieldRandomText = RandomStringUtils.randomAlphabetic(250);
+
+    public void commentBlogFieldRandomText() {
+        typeInto(commentBlogField, commentBlogFieldRandomText);
+
     }
 
 }

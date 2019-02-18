@@ -31,7 +31,7 @@ public class MyAccountPage extends PageObject {
     private WebElementFacade passwordMyAccountField;
 
 
-    @FindBy(css = ".form-row-first #account_first_name")
+    @FindBy(css = " .form-row-first #account_first_name")
     private WebElementFacade firstNameFieldMyAccount;
 
     @FindBy(css = ".form-row-last #account_last_name")
@@ -91,25 +91,23 @@ public class MyAccountPage extends PageObject {
     }
 
     public boolean checkLastNameFieldMyAccount() {
+
         waitFor(lastNameFieldMyAccount);
         return lastNameFieldMyAccount.containsText("Granger");
     }
 
-
-
     public boolean verifyNewPassWordFieldMyAccount() {
-        return passwordMyAccountField.equals(newPassWordFieldMyAccount); //bun
+        return passwordMyAccountField.equals(newPassWordFieldMyAccount);
 
     }
-
     public boolean verifyFirstLastNameConditions() {
         if ((checkFirstNameFieldMyAccount()) && (checkLastNameFieldMyAccount())) { //nu
-            //homePage.homePageButton();
-            System.out.println("oook");
+            System.out.println("IF STA");
             return true;
         } else {
             homePage.homePageButton();
             System.out.println("else sta");
+
         }
         return false;
     }

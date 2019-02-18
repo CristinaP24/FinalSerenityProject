@@ -17,22 +17,11 @@ public class BlogPostTests {
     BlogPostSteps blogPostSteps;
 
     @Test
-    public void logoutAtWordInCommentP2() {
+    public void logoutAtRandomString() {
         blogPostSteps.validLogin();
         blogPostSteps.clickBlogButton();
-        blogPostSteps.typeCommentBlogField();
+        blogPostSteps.commentBlogFieldRandomText();
         blogPostSteps.clickPostBlogCommentButton();
-        blogPostSteps.confirmLoginBlogMessage();
-        blogPostSteps.logutAtWordinComment();
-    }
-
-    @Test
-    public void logoutAtWordInCommentP3() {
-        blogPostSteps.validLogin();
-        blogPostSteps.clickBlogButton();
-        blogPostSteps.typeCommentBlogFieldpups();
-        blogPostSteps.clickPostBlogCommentButton();
-        blogPostSteps.confirmLoginBlogMessage();
         blogPostSteps.logutAtWordinComment();
     }
 

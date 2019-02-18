@@ -28,10 +28,6 @@ public class BlogPostSteps extends ScenarioSteps {
         blogPostPage.clickOnBlogButton();
     }
 
-    @Step
-    public void typeCommentBlogField() {
-        blogPostPage.typeCommentBlogFieldP2();
-    }
 
     @Step
     public void clickPostBlogCommentButton() {
@@ -39,44 +35,14 @@ public class BlogPostSteps extends ScenarioSteps {
     }
 
     @Step
-    public void confirmLoginBlogMessage() {
-        Assert.assertTrue(blogPostPage.confirmLoginBlogMessage());
-    }
-
-    @Step
     public void logutAtWordinComment() {
-        blogPostPage.logutAtWordinComment();
+        blogPostPage.logutAtRandomString();
     }
+
 
     @Step
-    public void typeCommentBlogFieldPups() {
-        blogPostPage.typeCommentBlogFieldP3();
+    public void commentBlogFieldRandomText() {
+        blogPostPage.commentBlogFieldRandomText();
     }
-
-    @Step
-    public void typeCommentBlogFieldpups() {
-        blogPostPage.typeCommentBlogFieldP4();
-    }
-
-    @StepGroup
-    public void logoutAtWordInComment() {
-        validLogin();
-        clickBlogButton();
-        typeCommentBlogField();
-        clickPostBlogCommentButton();
-        confirmLoginBlogMessage();
-        logutAtWordinComment();
-    }
-
-    @StepGroup
-    public void logoutAtWordInComment_pups() {
-        validLogin();
-        clickBlogButton();
-        typeCommentBlogFieldpups();
-        clickPostBlogCommentButton();
-        confirmLoginBlogMessage();
-        logutAtWordinComment();
-    }
-
 
 }
