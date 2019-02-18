@@ -44,16 +44,16 @@ public class BlogPostPage extends PageObject {
         clickOn(blogButton);
     }
 
-    public void typeCommentBlogField() {
-        typeInto(commentBlogField, "ok ok ok see what to write");
-    } //3 Puppies
+    public void typeCommentBlogFieldP2() {
+        typeInto(commentBlogField, "P2");
+    }
 
-    public void typeCommentBlogFieldPups() {
+    public void typeCommentBlogFieldP3() {
         typeInto(commentBlogField, "P3");
     }
 
-    public void typeCommentBlogFieldpups() {
-        typeInto(commentBlogField, "pups are my favourite pets");
+    public void typeCommentBlogFieldP4() {
+        typeInto(commentBlogField, "P4");
     }
 
     public void typeNameBlogField() {
@@ -91,23 +91,23 @@ public class BlogPostPage extends PageObject {
 
     public boolean logutAtWordinComment() {
 
-        if (commentBlogField.getText().contains("P3")) { //de verificat
+        if (commentBlogField.getText().contains("P")) { //de verificat
             clickOn(logoutRedirectLink);
-            System.out.println("P3");
+            System.out.println("P2 IF");
             return true;
-        } else if (commentBlogField.getText().contains("ok ok ok see what to write")) {
+        } else if (commentBlogField.getText().contains("P4")) {
             clickOn(logoutRedirectLink);
-            System.out.println("ok ok ok see what to write");
+            System.out.println("P4 ELSE IF");
             return true;
-        } else if (commentBlogField.getText().contains("Can't write diary notes here")) {
+        } else if (commentBlogField.getText().contains("P5")) {
             clickOn(logoutRedirectLink);
-            System.out.println("Can't write diary notes here");
+            System.out.println("P5 ELSE IF");
             return true;
         } else {
             clickOn(logoutRedirectLink);
             System.out.println("the ELSE");
             return true;
-
         }
     }
+
 }

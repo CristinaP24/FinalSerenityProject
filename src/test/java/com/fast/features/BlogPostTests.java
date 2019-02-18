@@ -17,17 +17,17 @@ public class BlogPostTests {
     BlogPostSteps blogPostSteps;
 
     @Test
-    public void logoutAtWordInComment() {
+    public void logoutAtWordInCommentP2() {
         blogPostSteps.validLogin();
         blogPostSteps.clickBlogButton();
-        blogPostSteps.typeCommentBlogFieldPups();
+        blogPostSteps.typeCommentBlogField();
         blogPostSteps.clickPostBlogCommentButton();
         blogPostSteps.confirmLoginBlogMessage();
         blogPostSteps.logutAtWordinComment();
     }
 
     @Test
-    public void logoutAtWordInComment_pups() {
+    public void logoutAtWordInCommentP3() {
         blogPostSteps.validLogin();
         blogPostSteps.clickBlogButton();
         blogPostSteps.typeCommentBlogFieldpups();

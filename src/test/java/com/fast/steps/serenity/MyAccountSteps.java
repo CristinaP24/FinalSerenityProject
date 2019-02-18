@@ -31,7 +31,7 @@ public class MyAccountSteps extends ScenarioSteps {
 
     @Step
     public void setUser() {
-        myAccountPage.enterEmailMyAccountField(); //de corectat
+        myAccountPage.enterEmailMyAccountField();
     }
 
     @Step
@@ -61,37 +61,15 @@ public class MyAccountSteps extends ScenarioSteps {
         myAccountPage.checkValidEmailMyAccount();
     }
 
-
     @Step
-    public void checkPasswordMyAccount() {
-        Assert.assertTrue(myAccountPage.checkPasswordMyAccountField());
+    public void verifyFirstLastNameConditions() {
+        myAccountPage.verifyFirstLastNameConditions();
     }
 
-    //@StepGroup
-//    public void validMyAccountCheck() {
-//        navigateToHomepage();
-//        goToLogin();
-//        setUser();
-//        checkPasswordMyAccount();
-//        //clickPasswordMyAccountField();
-//        clickOnLoginButton();
-//        checkLoggedIn();
-//        clickOnAccountDetailsButton();
-//        clickAccountDetails();
-//    }
-//
-//    @StepGroup
-//    public void validMyAccountPasswordCheck() {
-//        navigateToHomepage();
-//        goToLogin();
-//        setUser();
-//        checkPasswordMyAccount();
-//        //clickPasswordMyAccountField();
-//        clickOnLoginButton();
-//        checkLoggedIn();
-//        clickOnAccountDetailsButton();
-//        clickAccountDetails();
-//        checkPasswordMyAccount();
-//    }
+    @Step
+    public void verifyNewPassWordFieldMyAccount() {
+        myAccountPage.verifyNewPassWordFieldMyAccount();
+    }
+
 
 }

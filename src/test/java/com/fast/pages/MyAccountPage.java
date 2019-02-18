@@ -7,7 +7,7 @@ import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl("http://qa3.fasttrackit.org:8008/my-account")
 public class MyAccountPage extends PageObject {
-
+    HomePage homePage;
 
     @FindBy(css = "p:nth-child(1)")
     private WebElementFacade welcomeMessageStrong;
@@ -15,8 +15,6 @@ public class MyAccountPage extends PageObject {
     @FindBy(css = ".woocommerce-error")
     private WebElementFacade errorMessageStrong;
 
-    //@FindBy (css = "[value~='hermioneg@gmail.com']")
-    //@FindBy (css = "input[type*='text']")
     @FindBy(css = "[id^='username']")
     private WebElementFacade emailMyAccount;
 
@@ -27,8 +25,24 @@ public class MyAccountPage extends PageObject {
     @FindBy(css = "a[href*='edit-account']")
     private WebElementFacade accountDetailsButton;
 
-    @FindBy(css = "[id^='password']")//de corectat
+    //@FindBy(css = "[id^='password']")//de corectat
+    //@FindBy (css = ".form-row-wide #password")
+    @FindBy(css = " form #password")
     private WebElementFacade passwordMyAccountField;
+
+
+    @FindBy(css = ".form-row-first #account_first_name")
+    private WebElementFacade firstNameFieldMyAccount;
+
+    @FindBy(css = ".form-row-last #account_last_name")
+    private WebElementFacade lastNameFieldMyAccount;
+
+    @FindBy(css = ".form-row-wide #password_1")
+    private WebElementFacade newPassWordFieldMyAccount;
+
+    @FindBy(css = "fieldset .form-row-wide #password_1")
+    private WebElementFacade confirmNewPassWordFieldMyAccount;
+
 
     public boolean checkLoggedIn() {
         waitFor(welcomeMessageStrong);
@@ -54,13 +68,9 @@ public class MyAccountPage extends PageObject {
         clickOn(accountDetailsButton);
     }
 
-//   public void clickPasswordMyAccountField (){
-//      clickOn(passwordMyAccountField);
-//    }
 
     public boolean checkPasswordMyAccountField() {
         waitFor(passwordMyAccountField); //de corectat
-        typeInto(passwordMyAccountField, "notamuggle77");
         return passwordMyAccountField.containsText("notamuggle77");
     }
 
@@ -75,8 +85,39 @@ public class MyAccountPage extends PageObject {
         return welcomeMessageStrong.containsText("Hello " + username);
     }
 
+    public boolean checkFirstNameFieldMyAccount() {
+        waitFor(firstNameFieldMyAccount);
+        return firstNameFieldMyAccount.containsText("Hermione");
+    }
+
+    public boolean checkLastNameFieldMyAccount() {
+        waitFor(lastNameFieldMyAccount);
+        return lastNameFieldMyAccount.containsText("Granger");
+    }
+
+
+
+    public boolean verifyNewPassWordFieldMyAccount() {
+        return passwordMyAccountField.equals(newPassWordFieldMyAccount); //bun
+
+    }
+
+    public boolean verifyFirstLastNameConditions() {
+        if ((checkFirstNameFieldMyAccount()) && (checkLastNameFieldMyAccount())) { //nu
+            //homePage.homePageButton();
+            System.out.println("oook");
+            return true;
+        } else {
+            homePage.homePageButton();
+            System.out.println("else sta");
+        }
+        return false;
+    }
+
 
 }
+
+
 
 
 

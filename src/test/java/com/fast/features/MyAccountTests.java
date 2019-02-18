@@ -1,5 +1,6 @@
 package com.fast.features;
 
+import com.fast.pages.HomePage;
 import com.fast.pages.MyAccountPage;
 import com.fast.steps.serenity.LoginSteps;
 import com.fast.steps.serenity.MyAccountSteps;
@@ -19,29 +20,31 @@ public class MyAccountTests {
     @Steps
     MyAccountSteps myAccountSteps;
 
+
     @Test
-    public void validMyAccountCheck (){
+    public void validMyAccountCheck() {
         myAccountSteps.navigateToHomepage();
         myAccountSteps.goToLogin();
         myAccountSteps.setUser();
-        myAccountSteps.checkPasswordMyAccount();
-        myAccountSteps.clickOnLoginButton();
-        myAccountSteps.checkLoggedIn();
-        myAccountSteps.clickOnAccountDetailsButton();
-        myAccountSteps.clickAccountDetails();
-    }
-@Test
-    public void validMyAccountPasswordCheck (){
-        myAccountSteps.navigateToHomepage();
-        myAccountSteps.goToLogin();
-        myAccountSteps.setUser();
-        myAccountSteps.checkPasswordMyAccount();
         myAccountSteps.setPassword();
         myAccountSteps.clickOnLoginButton();
         myAccountSteps.checkLoggedIn();
         myAccountSteps.clickOnAccountDetailsButton();
-        //myAccountSteps.clickAccountDetails();
-       // myAccountSteps.checkPasswordMyAccount();  //de corectat
-}
+
+    }
+
+    @Test
+    public void validMyAccountPasswordCheck() {
+        myAccountSteps.navigateToHomepage();
+        myAccountSteps.goToLogin();
+        myAccountSteps.setUser();
+        myAccountSteps.setPassword();
+        myAccountSteps.clickOnLoginButton();
+        myAccountSteps.checkLoggedIn();
+        myAccountSteps.clickOnAccountDetailsButton();
+
+        myAccountSteps.verifyFirstLastNameConditions();
+        myAccountSteps.verifyNewPassWordFieldMyAccount();
+    }
 
 }

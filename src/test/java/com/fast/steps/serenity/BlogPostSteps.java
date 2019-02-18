@@ -30,7 +30,7 @@ public class BlogPostSteps extends ScenarioSteps {
 
     @Step
     public void typeCommentBlogField() {
-        blogPostPage.typeCommentBlogField();
+        blogPostPage.typeCommentBlogFieldP2();
     }
 
     @Step
@@ -50,12 +50,12 @@ public class BlogPostSteps extends ScenarioSteps {
 
     @Step
     public void typeCommentBlogFieldPups() {
-        blogPostPage.typeCommentBlogFieldPups();
+        blogPostPage.typeCommentBlogFieldP3();
     }
 
     @Step
     public void typeCommentBlogFieldpups() {
-        blogPostPage.typeCommentBlogFieldpups();
+        blogPostPage.typeCommentBlogFieldP4();
     }
 
     @StepGroup
