@@ -3,14 +3,13 @@ package com.fast.steps.serenity;
 import com.fast.pages.CartPage;
 import com.fast.pages.HomePage;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.junit.Assert;
 
 public class CartSteps extends ScenarioSteps {
 
-    HomePage homePage;
-    CartPage cartPage;
+    private HomePage homePage;
+    private CartPage cartPage;
 
 
     @Step
@@ -20,6 +19,7 @@ public class CartSteps extends ScenarioSteps {
 
     @Step
     public void navigateToHomepage() {
+        getDriver().manage().window().maximize();
         homePage.open();
     }
 
@@ -73,11 +73,6 @@ public class CartSteps extends ScenarioSteps {
         cartPage.checkQtyCartIf();
     }
 
-    @Step
-    public void viewCartButton() {
-        cartPage.viewCartButton();
-    }
-
 
     @Step
     public void removeProductFromCart() {
@@ -96,27 +91,8 @@ public class CartSteps extends ScenarioSteps {
     }
 
     @Step
-    public void addProductCartConfirmMessage (){
+    public void addProductCartConfirmMessage() {
         Assert.assertTrue(cartPage.addProductCartConfirmMessage());
-    }
-
-
-    @StepGroup
-    public void addProductCartWithoutLogIn() {
-        navigateToHomepage();
-        clickOnShopButton();
-        addBeanieToCart();
-        viewShoppingCartButton();
-    }
-
-    @StepGroup
-    public void addProductCart_10000() {
-        navigateToHomepage();
-        clickOnShopButton();
-        viewCapProduct();
-        clickQtyBox();
-        addToCartButton_10000();
-        clickAddToCartButton();
     }
 
 }

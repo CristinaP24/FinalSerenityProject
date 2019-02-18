@@ -81,7 +81,6 @@ public class MyAccountPage extends PageObject {
 
     public boolean checkRegister(String username) {
         waitFor(welcomeMessageStrong);
-        System.out.println(welcomeMessageStrong.getText());
         return welcomeMessageStrong.containsText("Hello " + username);
     }
 

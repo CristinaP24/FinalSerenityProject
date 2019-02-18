@@ -9,20 +9,21 @@ import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
+
 @RunWith(SerenityRunner.class)
 
 public class SearchBarTests {
     @Managed(uniqueSession = true)
     private WebDriver driver;
     @Steps
-    SearchBarSteps searchBarSteps;
+    private SearchBarSteps searchBarSteps;
     @Steps
-    ShopSteps shopSteps;
+    private ShopSteps shopSteps;
     @Steps
-    CartSteps cartSteps;
+    private CartSteps cartSteps;
 
     @Test
-    public void enterBeanieProductSearchBarField (){
+    public void enterBeanieProductSearchBarField() {
         searchBarSteps.navigateToHomePage();
         searchBarSteps.clickSearchBarIcon();
         searchBarSteps.enterBeanieProductSearchBarField();
@@ -33,11 +34,10 @@ public class SearchBarTests {
         cartSteps.clickAddToCartButton();
         cartSteps.viewShoppingCartButton();
         cartSteps.removeProductFromCart();
-
     }
 
     @Test
-    public void enterSearchTermLength (){
+    public void enterSearchTermLength() {
         searchBarSteps.navigateToHomePage();
         searchBarSteps.clickSearchBarIcon();
         searchBarSteps.enterSearchTermLength();
@@ -45,14 +45,12 @@ public class SearchBarTests {
         searchBarSteps.checkMessageSearchBar();
         searchBarSteps.enterValidTermSearchBar();
 
-
-
     }
 
     @Test
-    public void selectProductValidInvalid (){
+    public void selectProductValidInvalid() {
         searchBarSteps.navigateToHomePage();
-        searchBarSteps.clickSearchBarIcon() ;
+        searchBarSteps.clickSearchBarIcon();
         searchBarSteps.selectProductValidInvalid();
         searchBarSteps.clickSearchBarButton();
     }

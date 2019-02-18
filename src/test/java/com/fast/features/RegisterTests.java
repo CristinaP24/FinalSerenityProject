@@ -13,8 +13,7 @@ public class RegisterTests {
     @Managed(uniqueSession = true)
     private WebDriver driver;
     @Steps
-
-    RegisterSteps registerSteps;
+    private RegisterSteps registerSteps;
 
     @Test
     public void checkRegisterRandomString() {

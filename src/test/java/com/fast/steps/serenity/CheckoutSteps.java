@@ -7,14 +7,15 @@ import net.thucydides.core.steps.ScenarioSteps;
 import org.junit.Assert;
 
 public class CheckoutSteps extends ScenarioSteps {
-    HomePage homePage;
-    LoginPage loginPage;
-    MyAccountPage myAccountPage;
-    CheckoutPage checkoutPage;
-    CartPage cartPage;
+    private HomePage homePage;
+    private LoginPage loginPage;
+    private MyAccountPage myAccountPage;
+    private CheckoutPage checkoutPage;
+    private CartPage cartPage;
 
     @Step
     public void navigateToHomepage() {
+        getDriver().manage().window().maximize();
         homePage.open();
     }
 
@@ -110,11 +111,6 @@ public class CheckoutSteps extends ScenarioSteps {
         Assert.assertTrue(checkoutPage.checkErrorPhoneMessageBilling());
     }
 
-    //    @Step
-//    public void checkErrorCountryMessageBilling() {
-//        Assert.assertTrue(checkoutPage.checkErrorCountryMessageBilling());
-//
-//    }
     @Step
     public void ifCheckPhoneTksMessage() {
         checkoutPage.ifCheckPhoneTksMessage();

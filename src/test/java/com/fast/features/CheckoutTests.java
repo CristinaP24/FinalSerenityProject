@@ -13,7 +13,7 @@ public class CheckoutTests {
     @Managed(uniqueSession = true)
     private WebDriver driver;
     @Steps
-    CheckoutSteps checkoutSteps;
+    private CheckoutSteps checkoutSteps;
 
     @Test
     public void validCheckout() {

@@ -9,15 +9,15 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityRunner.class)
-public class ReviewTests  {
+public class ReviewTests {
     @Managed(uniqueSession = true)
     private WebDriver driver;
 
     @Steps
-    ReviewSteps reviewSteps;
+    private ReviewSteps reviewSteps;
 
     @Test
-    public void validReview (){
+    public void validReview() {
         reviewSteps.navigateToHomepage();
         reviewSteps.goToLogin();
         reviewSteps.setUser();
@@ -31,8 +31,9 @@ public class ReviewTests  {
         reviewSteps.addValidReview();
         reviewSteps.clickSubmitReviewButton();
     }
+
     @Test
-    public void invalidSpaceReview (){
+    public void invalidSpaceReview() {
         reviewSteps.navigateToHomepage();
         reviewSteps.goToLogin();
         reviewSteps.setUser();

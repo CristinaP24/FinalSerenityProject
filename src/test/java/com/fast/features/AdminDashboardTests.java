@@ -16,9 +16,9 @@ public class AdminDashboardTests {
     private WebDriver driver;
 
     @Steps
-    AdminDashboardSteps adminDashboardSteps;
+    private AdminDashboardSteps adminDashboardSteps;
     @Steps
-    HomePage homePage;
+    private HomePage homePage;
 
     @Test
     public void selectStatusOnHold() {
@@ -27,7 +27,8 @@ public class AdminDashboardTests {
         adminDashboardSteps.selectDashboardRootMenu();
         adminDashboardSteps.setClickAdminRootMenu();
         adminDashboardSteps.clickWooCommerceCateg();
-        adminDashboardSteps.selectFirst5Orders();
+        adminDashboardSteps.searchOrderField();
+        adminDashboardSteps.checkBoxTick();
         adminDashboardSteps.selectOrdersDropDown();
         adminDashboardSteps.applyButton();
         adminDashboardSteps.checkOnHoldStatusChangeMessage();

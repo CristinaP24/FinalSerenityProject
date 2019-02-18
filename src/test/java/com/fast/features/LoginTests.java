@@ -15,20 +15,20 @@ public class LoginTests {
     private WebDriver driver;
 
     @Steps
-    LoginSteps loginSteps;
+    private LoginSteps loginSteps;
 
     @Test
-    public void validLoginTest(){
-       loginSteps.navigateToHomepage();
-       loginSteps.goToLogin();
-       loginSteps.setUser();
-       loginSteps.setPassword();
-       loginSteps.clickOnLoginButton();
-       loginSteps.checkLoggedIn();
+    public void validLoginTest() {
+        loginSteps.navigateToHomepage();
+        loginSteps.goToLogin();
+        loginSteps.setUser();
+        loginSteps.setPassword();
+        loginSteps.clickOnLoginButton();
+        loginSteps.checkLoggedIn();
     }
 
     @Test
-    public void invalidLoginTestCaps (){
+    public void validLoginTestCaps() {
         loginSteps.navigateToHomepage();
         loginSteps.goToLogin();
         loginSteps.setUserInvalidCaps();
@@ -38,7 +38,7 @@ public class LoginTests {
     }
 
     @Test
-    public void invalidLogin257 (){
+    public void invalidLogin257() {
         loginSteps.navigateToHomepage();
         loginSteps.goToLogin();
         loginSteps.setUserInvalid257();
@@ -48,7 +48,7 @@ public class LoginTests {
     }
 
     @Test
-    public void InvalidLogInWithIf (){
+    public void InvalidLogInWithIf() {
         loginSteps.navigateToHomepage();
         loginSteps.goToLogin();
         loginSteps.setEmailField2();

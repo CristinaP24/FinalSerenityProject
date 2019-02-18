@@ -10,12 +10,13 @@ import org.junit.Assert;
 
 public class BlogPostSteps extends ScenarioSteps {
 
-    HomePage homePage;
-    LoginPage loginPage;
-    BlogPostPage blogPostPage;
+   private HomePage homePage;
+   private LoginPage loginPage;
+   private BlogPostPage blogPostPage;
 
     @Step
     public void validLogin() {
+        getDriver().manage().window().maximize();
         homePage.open();
         homePage.clickMyAccountButton();
         loginPage.setEmailField();

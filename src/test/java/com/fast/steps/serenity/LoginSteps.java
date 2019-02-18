@@ -11,9 +11,9 @@ import org.junit.Assert;
 
 public class LoginSteps extends ScenarioSteps {
 
-    HomePage homePage;
-    LoginPage loginPage;
-    MyAccountPage myAccountPage;
+   private HomePage homePage;
+   private LoginPage loginPage;
+   private MyAccountPage myAccountPage;
 
     @Step
     public void navigateToHomepage() {

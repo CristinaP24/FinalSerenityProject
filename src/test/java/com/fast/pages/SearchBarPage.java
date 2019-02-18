@@ -68,7 +68,6 @@ public class SearchBarPage extends PageObject {
         listSearchTerms.add("Octopus");
         listSearchTerms.add("123456789");
         listSearchTerms.add("@#$%^&&*");
-
         String listA = listSearchTerms.get(5);
         typeInto(enterInSearchBarField, listA);
     }

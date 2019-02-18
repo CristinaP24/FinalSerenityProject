@@ -8,13 +8,14 @@ import org.junit.Assert;
 
 public class ReviewSteps extends ScenarioSteps {
 
-    HomePage homePage;
-    LoginPage loginPage;
-    MyAccountPage myAccountPage;
-    ReviewPage reviewPage;
+    private HomePage homePage;
+    private LoginPage loginPage;
+    private MyAccountPage myAccountPage;
+    private ReviewPage reviewPage;
 
     @Step
     public void navigateToHomepage() {
+        getDriver().manage().window().maximize();
         homePage.open();
     }
 
@@ -86,44 +87,13 @@ public class ReviewSteps extends ScenarioSteps {
     }
 
     @Step
-    public void addSpaceReview() {
-        reviewPage.addSpaceReview();
-    }
-
-    @Step
-    public void clickBackButtonInvalidReview() {
-        reviewPage.backButtonInvalidReview();
-    }
-
-    @Step
     public void clickSubmitButtonReview() {
         reviewPage.clickSubmitButtonReview();
     }
 
     @Step
-    public void errorMessageReviewStrong() {
-        Assert.assertTrue(reviewPage.errorMessageReviewStrong());
-    }
-
-    @Step
     public void ifCheckSpaceReview() {
         reviewPage.ifCheckSpaceReview();
-    }
-
-    @StepGroup
-    public void validReview() {
-        navigateToHomepage();
-        goToLogin();
-        clickPasswordMyAccountField();
-        setUser();
-        setPassword();
-        clickLoginButton();
-        clickOnShopButton();
-        viewBeltProduct();
-        clickReviewButton();
-        clickStar3RatingProduct();
-        addValidReview();
-        clickSubmitReviewButton();
     }
 
 

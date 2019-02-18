@@ -12,21 +12,15 @@ import org.junit.Assert;
 
 public class ShopSteps extends ScenarioSteps {
 
-    HomePage homePage;
-    LoginPage loginPage;
-    ShopPage shopPage;
-    MyAccountPage myAccountPage;
+    private HomePage homePage;
+    private LoginPage loginPage;
+    private ShopPage shopPage;
+    private MyAccountPage myAccountPage;
 
     @Step
-
     public void validLogin() {
+        getDriver().manage().window().maximize();
         homePage.open();
-        //homePage.clickMyAccountButton();
-        //loginPage.setEmailField();
-        //loginPage.setPasswordField();
-        //loginPage.clickLoginButton();
-
-        //myAccountPage.checkLoggedIn();
     }
 
     @Step
@@ -49,18 +43,9 @@ public class ShopSteps extends ScenarioSteps {
         shopPage.selectCapElseIfProduct();
     }
 
-
     @Step
     public void clickOnBeanieWithLogoProduct() {
         shopPage.clickOnBeanieWithLogoProduct();
-    }
-
-    @Step
-    public void clickOnHoodieWithZipperProduct (){shopPage.clickOnHoodieWithZipperProduct();}
-
-    @Step
-    public void addToCartBeanieWithLogo() {
-        shopPage.addToCartBeanieWithLogo();
     }
 
     @Step
@@ -74,6 +59,8 @@ public class ShopSteps extends ScenarioSteps {
     }
 
     @Step
-    public void checkProductAfterSearchBar (){Assert.assertTrue(shopPage.checkProductAfterSearchBar());}
+    public void checkProductAfterSearchBar() {
+        Assert.assertTrue(shopPage.checkProductAfterSearchBar());
+    }
 
 }

@@ -71,7 +71,6 @@ public class ShopPage extends PageObject {
         for (WebElementFacade product : listProductsPage1) {
             if (product.getText().contains("Belt")) {
                 clickOn(product);
-                System.out.println("belt");
                 return true;
             }
         }
@@ -79,18 +78,13 @@ public class ShopPage extends PageObject {
     }
 
     public boolean selectHoodieElseProduct() {
-        System.out.println("BEFORE FOR");
         for (WebElementFacade product : listProductsPage1) {
-            System.out.println("AFTER FOR");
-            System.out.println(product.getText());
 
             if (product.getText().contains("Octopus is not here")) {
-                System.out.println("prints if");
                 clickOn(product);
                 return true;
 
             } else if (product.getText().contains("Hoodie with Zipper")) {
-                System.out.println("prints else if");
                 clickOn(product);
                 return true;
             }

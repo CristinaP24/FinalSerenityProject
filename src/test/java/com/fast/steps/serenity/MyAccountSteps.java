@@ -10,12 +10,13 @@ import org.junit.Assert;
 
 public class MyAccountSteps extends ScenarioSteps {
 
-    HomePage homePage;
-    LoginPage loginPage;
-    MyAccountPage myAccountPage;
+    private HomePage homePage;
+    private LoginPage loginPage;
+    private MyAccountPage myAccountPage;
 
     @Step
     public void navigateToHomepage() {
+        getDriver().manage().window().maximize();
         homePage.open();
     }
 
@@ -23,11 +24,6 @@ public class MyAccountSteps extends ScenarioSteps {
     public void goToLogin() {
         homePage.clickMyAccountButton();
     }
-
-//    @Step
-//    public void clickPasswordMyAccountField() {
-//        myAccountPage.clickPasswordMyAccountField();
-//    }
 
     @Step
     public void setUser() {
@@ -49,13 +45,14 @@ public class MyAccountSteps extends ScenarioSteps {
     public void checkLoggedIn() {
         Assert.assertTrue(myAccountPage.checkLoggedIn());
     }
+
     @Step
-    public void checkFirstNameFieldMyAccount(){
+    public void checkFirstNameFieldMyAccount() {
         Assert.assertTrue(myAccountPage.checkFirstNameFieldMyAccount());
     }
 
     @Step
-    public void checkLastNameFieldMyAccount(){
+    public void checkLastNameFieldMyAccount() {
         Assert.assertTrue(myAccountPage.checkLastNameFieldMyAccount());
     }
 

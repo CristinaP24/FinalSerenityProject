@@ -10,9 +10,9 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Assert;
 
 public class RegisterSteps extends ScenarioSteps {
-    HomePage homePage;
-    RegisterPage registerPage;
-    MyAccountPage myAccountPage;
+    private HomePage homePage;
+    private RegisterPage registerPage;
+    private MyAccountPage myAccountPage;
 
     private String userName = RandomStringUtils.randomAlphanumeric(10);
     private String email = userName + "@email.com";
@@ -48,5 +48,4 @@ public class RegisterSteps extends ScenarioSteps {
     public void checkRegistration() {
         Assert.assertTrue(myAccountPage.checkRegister(userName));
     }
-
 }

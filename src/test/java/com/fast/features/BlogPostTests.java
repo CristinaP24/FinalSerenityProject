@@ -14,7 +14,7 @@ public class BlogPostTests {
     private WebDriver driver;
 
     @Steps
-    BlogPostSteps blogPostSteps;
+   private BlogPostSteps blogPostSteps;
 
     @Test
     public void logoutAtRandomString() {

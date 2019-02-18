@@ -18,8 +18,7 @@ public class MyAccountTests {
     private WebDriver driver;
 
     @Steps
-    MyAccountSteps myAccountSteps;
-
+    private MyAccountSteps myAccountSteps;
 
     @Test
     public void validMyAccountCheck() {
@@ -42,8 +41,6 @@ public class MyAccountTests {
         myAccountSteps.clickOnLoginButton();
         myAccountSteps.checkLoggedIn();
         myAccountSteps.clickOnAccountDetailsButton();
-//        myAccountSteps.checkFirstNameFieldMyAccount();
-       // myAccountSteps.checkLastNameFieldMyAccount();
         myAccountSteps.verifyFirstLastNameConditions();
         myAccountSteps.verifyNewPassWordFieldMyAccount();
     }

@@ -33,7 +33,6 @@ public class AdminDashboardPage extends PageObject {
     @FindBy(css = "#order_date .sorting-indicator")
     private WebElementFacade sortingDateArrow;
 
-    // @FindBy(css = "th.check-column")
     @FindBy(css = "#cb")
     private WebElementFacade checkBoxTick;
 
@@ -54,7 +53,6 @@ public class AdminDashboardPage extends PageObject {
 
     @FindBy(css = ".wp-menu-name")
 
-
     List<WebElementFacade> mainMenuCategories;
 
     @FindBy(css = "#menu-posts-product a[href*='post-new']")
@@ -63,7 +61,7 @@ public class AdminDashboardPage extends PageObject {
     @FindBy(css = "#titlewrap [type=text]")
     private WebElementFacade enterProductNameField;
 
-    @FindBy(css = "#the-list")
+    @FindBy(css = ".iedit")
     List<WebElementFacade> listOrders;
 
     @FindBy(id = "_regular_price")
@@ -123,25 +121,23 @@ public class AdminDashboardPage extends PageObject {
     @FindBy(css = "#message p a[href*='8008']")
     private WebElementFacade viewPublishedProduct;
 
-    @FindBy(css = " product_title entry-title") //
+    @FindBy(css = " product_title entry-title")
     private WebElementFacade mainProductTitle;
 
     @FindBy(css = "a[rel='tag']")
-    private WebElementFacade mainProductCategory; //
+    private WebElementFacade mainProductCategory;
 
     @FindBy(css = "input-text qty text")
-    private WebElementFacade mainProductQuantity; //
+    private WebElementFacade mainProductQuantity;
 
     @FindBy(css = ".sku_wrapper")
-    private WebElementFacade mainProductSku;//
+    private WebElementFacade mainProductSku;
 
     @FindBy(css = "stock in-stock")
-    private WebElementFacade mainProductStock; //
+    private WebElementFacade mainProductStock;
 
-    //@FindBy(css = " .summary entry-summary")
-    //private WebElementFacade mainProductEntryDetails;
-
-    //private List<WebElementFacade> mainProductEntryDetails; //
+    @FindBy (css = " .search-box #post-search-input")
+    private WebElementFacade searchOrderField;
 
     public void clickWooCommerceCateg() {
         clickOn(clickWooCommerceCateg);
@@ -149,18 +145,6 @@ public class AdminDashboardPage extends PageObject {
 
     public void selectOrdersDropDown() {
         bulkActionDropdown.selectByVisibleText("Change status to on-hold");
-    }
-
-    public boolean selectFirst5Orders() {
-
-        for (WebElementFacade orders : listOrders) {
-            int size = listOrders.size();
-            if (size <= 5) {
-                clickOn(checkBoxTick);
-                return true;
-            }
-        }
-        return false;
     }
 
     public void applyButton() {
@@ -174,17 +158,14 @@ public class AdminDashboardPage extends PageObject {
     }
 
     public void selectDashboardRootMenu() {
-
         Actions action = new Actions(getDriver());
         WebElementFacade e = dashboardAdminRootMenu;
         action.moveToElement(e).perform();
 
     }
-
     public void setClickAdminRootMenu() {
         clickOn(clickAdminRootMenu);
     }
-
 
     public boolean selectMainMenuCategories() {
         Actions action = new Actions(getDriver());
@@ -196,7 +177,6 @@ public class AdminDashboardPage extends PageObject {
             }
         }
         return false;
-
     }
     public void clickAddNewProductButton() {
         clickOn(addNewProductButton);
@@ -205,7 +185,6 @@ public class AdminDashboardPage extends PageObject {
     public void enterProductNameField() {
         typeInto(enterProductNameField, "Veritaserum Potion");
     }
-
 
     public void enterRegularPriceField() {
         typeInto(enterRegularPriceField, "25");
@@ -241,7 +220,6 @@ public class AdminDashboardPage extends PageObject {
         clickOn(selectColorAttribute);
     }
 
-
     public void addAttributeProdButton() {
         clickOn(addAttributeProdButton);
     }
@@ -276,11 +254,18 @@ public class AdminDashboardPage extends PageObject {
         clickOn(viewPublishedProduct);
     }
 
+    public void checkBoxTick (){
+        clickOn(checkBoxTick);
+    }
+
 
     public boolean checkMainProductSku() {
         return mainProductSku.containsText("SKU: serum-truth77");
     }
 
+    public void searchOrderField (){
+        searchOrderField.typeAndEnter("Hermione");
+    }
 
     public boolean verifyProductExistenceWith3Details() {
         waitABit(6000);

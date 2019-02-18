@@ -9,13 +9,14 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Assert;
 
 public class SearchBarSteps extends ScenarioSteps {
-    HomePage homePage;
-    SearchBarPage searchBarPage;
+    private HomePage homePage;
+    private SearchBarPage searchBarPage;
 
     private String searchTermLength = RandomStringUtils.randomAlphabetic(30);
 
     @Step
     public void navigateToHomePage() {
+        getDriver().manage().window().maximize();
         homePage.open();
     }
 
@@ -50,5 +51,8 @@ public class SearchBarSteps extends ScenarioSteps {
     }
 
     @Step
-    public void enterValidTermSearchBar (){searchBarPage.enterValidTermSearchBar();}
+    public void enterValidTermSearchBar() {
+        searchBarPage.enterValidTermSearchBar();
+    }
+
 }

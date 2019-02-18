@@ -8,12 +8,13 @@ import net.thucydides.core.steps.ScenarioSteps;
 import org.junit.Assert;
 
 public class AdminDashboardSteps extends ScenarioSteps {
-    HomePage homePage;
-    MyAccountAdminPage myAccountAdminPage;
-    AdminDashboardPage adminDashboardPage;
+    private HomePage homePage;
+    private MyAccountAdminPage myAccountAdminPage;
+    private AdminDashboardPage adminDashboardPage;
 
     @Step
     public void validAdminLogin() {
+        getDriver().manage().window().maximize();
         homePage.open();
         myAccountAdminPage.clickOnmyAccountButton();
         myAccountAdminPage.enterAdminUsername();
@@ -46,12 +47,6 @@ public class AdminDashboardSteps extends ScenarioSteps {
     public void selectOrdersDropDown() {
         adminDashboardPage.selectOrdersDropDown();
     }
-
-    @Step
-    public void selectFirst5Orders() {
-        adminDashboardPage.selectFirst5Orders();
-    }
-
 
     @Step
     public void applyButton() {
@@ -168,10 +163,18 @@ public class AdminDashboardSteps extends ScenarioSteps {
 
     }
 
-
     @Step
     public void verifyProductExistenceWith3Details() {
         adminDashboardPage.verifyProductExistenceWith3Details();
     }
 
+    @Step
+    public void searchOrderField() {
+        adminDashboardPage.searchOrderField();
+    }
+
+    @Step
+    public void checkBoxTick() {
+        adminDashboardPage.checkBoxTick();
+    }
 }

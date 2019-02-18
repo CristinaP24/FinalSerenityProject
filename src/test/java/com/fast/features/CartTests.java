@@ -19,9 +19,9 @@ public class CartTests {
     private WebDriver driver;
 
     @Steps
-    CartSteps cartSteps;
+    private CartSteps cartSteps;
     @Steps
-    ShopSteps shopSteps;
+    private ShopSteps shopSteps;
 
 
     @Test

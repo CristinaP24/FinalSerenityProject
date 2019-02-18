@@ -16,10 +16,9 @@ public class ShopTests {
     @Managed(uniqueSession = true)
     private WebDriver driver;
     @Steps
-    ShopSteps shopSteps;
+    private ShopSteps shopSteps;
     @Steps
-    CartSteps cartSteps; // daca nu pui @steps inainte, nu ti-l initializeaza, si de-aia ai eroarea: NullPointerException
-
+    private CartSteps cartSteps;
 
     @Test
     public void selectBeltForList() {
@@ -27,6 +26,7 @@ public class ShopTests {
         shopSteps.clickOnShopButtonMainMenu();
         shopSteps.selectBeltForProduct();
     }
+
     @Test
     public void selectHoodieElseProduct() {
         shopSteps.validLogin();
@@ -37,6 +37,7 @@ public class ShopTests {
         cartSteps.removeProductFromCart();
         cartSteps.removeProductCartConfirm();
     }
+
     @Test
     public void selectCapElseIfProduct() {
         shopSteps.validLogin();
