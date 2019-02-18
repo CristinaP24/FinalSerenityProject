@@ -25,16 +25,16 @@ public class MyAccountPage extends PageObject {
     @FindBy(css = "a[href*='edit-account']")
     private WebElementFacade accountDetailsButton;
 
-    //@FindBy(css = "[id^='password']")//de corectat
-    //@FindBy (css = ".form-row-wide #password")
     @FindBy(css = " form #password")
     private WebElementFacade passwordMyAccountField;
 
 
-    @FindBy(css = " .form-row-first #account_first_name")
+    //@FindBy(css = ".form-row-first #account_first_name")
+    @FindBy (css = "input[type*='text']#account_first_name")
     private WebElementFacade firstNameFieldMyAccount;
 
-    @FindBy(css = ".form-row-last #account_last_name")
+    //@FindBy(css = ".form-row-last #account_last_name")
+    @FindBy (css = "input[type*='text']#account_last_name")
     private WebElementFacade lastNameFieldMyAccount;
 
     @FindBy(css = ".form-row-wide #password_1")
@@ -59,7 +59,7 @@ public class MyAccountPage extends PageObject {
     }
 
     public boolean checkValidEmailMyAccount() {
-        waitFor(emailMyAccount);//corectare
+        waitFor(emailMyAccount);
         typeInto(emailMyAccount, "hermioneg@gmail.com");
         return emailMyAccount.containsText("hermioneg@gmail.com");
     }
@@ -70,7 +70,7 @@ public class MyAccountPage extends PageObject {
 
 
     public boolean checkPasswordMyAccountField() {
-        waitFor(passwordMyAccountField); //de corectat
+        waitFor(passwordMyAccountField);
         return passwordMyAccountField.containsText("notamuggle77");
     }
 
@@ -79,7 +79,7 @@ public class MyAccountPage extends PageObject {
         return welcomeMessageStrong.containsText("Hello hermioneg (not hermioneg? Log out)");
     }
 
-    public boolean checkRegister(String username) { //pt mine sa verific
+    public boolean checkRegister(String username) {
         waitFor(welcomeMessageStrong);
         System.out.println(welcomeMessageStrong.getText());
         return welcomeMessageStrong.containsText("Hello " + username);
@@ -87,30 +87,28 @@ public class MyAccountPage extends PageObject {
 
     public boolean checkFirstNameFieldMyAccount() {
         waitFor(firstNameFieldMyAccount);
-        return firstNameFieldMyAccount.containsText("Hermione");
+        return firstNameFieldMyAccount.getText().contains("Hermione");
     }
 
     public boolean checkLastNameFieldMyAccount() {
 
         waitFor(lastNameFieldMyAccount);
-        return lastNameFieldMyAccount.containsText("Granger");
+        return lastNameFieldMyAccount.getText().contains("Granger");
     }
 
     public boolean verifyNewPassWordFieldMyAccount() {
         return passwordMyAccountField.equals(newPassWordFieldMyAccount);
 
     }
-    public boolean verifyFirstLastNameConditions() {
-        if ((checkFirstNameFieldMyAccount()) && (checkLastNameFieldMyAccount())) { //nu
-            System.out.println("IF STA");
-            return true;
-        } else {
-            homePage.homePageButton();
-            System.out.println("else sta");
 
+    public boolean verifyFirstLastNameConditions() {
+        if (firstNameFieldMyAccount.getText().contains("Hermione") && (lastNameFieldMyAccount.getText().contains("Granger"))) {
+            return true;
         }
         return false;
     }
+
+
 
 
 }

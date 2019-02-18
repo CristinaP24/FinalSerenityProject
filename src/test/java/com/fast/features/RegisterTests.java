@@ -15,8 +15,9 @@ public class RegisterTests {
     @Steps
 
     RegisterSteps registerSteps;
+
     @Test
-    public void checkRegisterRandomString (){
+    public void checkRegisterRandomString() {
         registerSteps.navigateToHomepage();
         registerSteps.clickMyAccountButton();
         registerSteps.enterRegisterEmailStr();
@@ -24,33 +25,6 @@ public class RegisterTests {
         registerSteps.registerButton();
         registerSteps.checkRegistration();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

@@ -42,8 +42,8 @@ public class MyAccountTests {
         myAccountSteps.clickOnLoginButton();
         myAccountSteps.checkLoggedIn();
         myAccountSteps.clickOnAccountDetailsButton();
-        myAccountSteps.checkFirstNameFieldMyAccount();
-        myAccountSteps.checkLastNameFieldMyAccount();
+//        myAccountSteps.checkFirstNameFieldMyAccount();
+       // myAccountSteps.checkLastNameFieldMyAccount();
         myAccountSteps.verifyFirstLastNameConditions();
         myAccountSteps.verifyNewPassWordFieldMyAccount();
     }

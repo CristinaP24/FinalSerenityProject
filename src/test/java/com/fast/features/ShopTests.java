@@ -26,28 +26,24 @@ public class ShopTests {
         shopSteps.validLogin();
         shopSteps.clickOnShopButtonMainMenu();
         shopSteps.selectBeltForProduct();
-
     }
-
     @Test
     public void selectHoodieElseProduct() {
         shopSteps.validLogin();
         shopSteps.clickOnShopButtonMainMenu();
-        shopSteps.clickOn1stPageButton();
         shopSteps.selectHoodieElseProduct();
         shopSteps.addToCartButtonPageProduct();
         shopSteps.shoppingCartIcon();
         cartSteps.removeProductFromCart();
         cartSteps.removeProductCartConfirm();
     }
-
     @Test
     public void selectCapElseIfProduct() {
         shopSteps.validLogin();
         shopSteps.clickOnShopButtonMainMenu();
         shopSteps.selectCapElseIfProduct();
+        shopSteps.checkProductAfterSearchBar();
     }
-
 }
 
 

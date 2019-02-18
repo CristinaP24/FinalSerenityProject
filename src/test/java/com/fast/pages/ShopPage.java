@@ -44,26 +44,24 @@ public class ShopPage extends PageObject {
     @FindBy(css = "#search-2 input[title*='Search for']")
     private WebElementFacade searchBarLateral;
 
-    @FindBy (css = "a[title*='View your shopping cart']")
+    @FindBy(css = "a[title*='View your shopping cart']")
     private WebElementFacade shoppingcartIcon;
 
-    @FindBy (css = ".single_add_to_cart_button")
+    @FindBy(css = ".single_add_to_cart_button")
     private WebElementFacade addToCartButtonPageProduct;
 
-    @FindBy (css = "div main nav ul li:first-child")
+    @FindBy(css = "div main nav ul li:first-child")
     private WebElementFacade clickOn1stPageButton;
 
-    @FindBy (css = "li[id*='menu-item-1642']")
+    @FindBy(css = "li[id*='menu-item-1642']")
     private WebElementFacade homePageButton;
 
+    @FindBy(css = ".page-title")
+    private WebElementFacade checkProductAfterSearchBar;
 
-    //@FindBy(css = " .woocommerce-loop-product__title")
-            //@FindBy (css = " .products columns-4")
-           //@FindBy (css = "#main")
-    @FindBy (css = " .products")
-    //@FindBy (css = " site-main")
-            //@FindBy (css = "a[class*= 'product__link']")
-            List<WebElementFacade> listProductsPage1;
+
+    @FindBy(css = " .woocommerce-loop-product__title")
+    List<WebElementFacade> listProductsPage1;
 
     public void clickOnShopButtonMainMenu() {
         clickOn(clickOnShopButtonMainMenu);
@@ -72,7 +70,6 @@ public class ShopPage extends PageObject {
     public boolean selectBeltForProduct() {
         for (WebElementFacade product : listProductsPage1) {
             if (product.getText().contains("Belt")) {
-                //product.findElement(By.cssSelector("img")).click();
                 clickOn(product);
                 System.out.println("belt");
                 return true;
@@ -87,26 +84,16 @@ public class ShopPage extends PageObject {
             System.out.println("AFTER FOR");
             System.out.println(product.getText());
 
-
             if (product.getText().contains("Octopus is not here")) {
-                System.out.println("Belt prints");
+                System.out.println("prints if");
                 clickOn(product);
                 return true;
 
-
-
-            } else if (product.getText().contains("Cap")) {
-                System.out.println("prints else if"); //de vazut aici
-                //clickOn(clickOn1stPageButton);
-                //product.findElement(By.cssSelector("a[class*='product__']")).click();
-                product.findBy(By.cssSelector("a[class*= 'product__link']")).click();
-                //clickOn(product);
+            } else if (product.getText().contains("Hoodie with Zipper")) {
+                System.out.println("prints else if");
+                clickOn(product);
                 return true;
-            } else {
-                System.out.println("prints the else");
-                clickOn(homePageButton);
             }
-            return true;
         }
         return false;
     }
@@ -119,24 +106,24 @@ public class ShopPage extends PageObject {
             } else if (product.getText().contains("Neither is knife.")) {
                 clickOn(product);
                 return true;
-
             } else {
-                typeInto(searchBarLateral, "Cap");
+                searchBarLateral.typeAndEnter("Cap");
                 return true;
-
             }
         }
         return false;
     }
-    public void shoppingCartIcon ()
-    {clickOn(shoppingcartIcon);}
 
+    public void shoppingCartIcon() {
+        clickOn(shoppingcartIcon);
+    }
 
     public void clickOnBeanieWithLogoProduct() {
         waitABit(3000);
         clickOn(viewBeanieWithLogoProduct);
     }
-    public void clickOnHoodieWithZipperProduct (){
+
+    public void clickOnHoodieWithZipperProduct() {
         clickOn(view_hoodieWithZipperProduct);
     }
 
@@ -144,12 +131,14 @@ public class ShopPage extends PageObject {
         clickOn(addToCartButtonSingleProduct);
     }
 
-    public void addToCartButtonPageProduct (){
+    public void addToCartButtonPageProduct() {
         waitFor(20);
-        clickOn(addToCartButtonPageProduct);}
+        clickOn(addToCartButtonPageProduct);
+    }
 
-        public void clickOn1stPageButton (){
-        waitABit(4000);
-        clickOn(clickOn1stPageButton);
-        }
+    public boolean checkProductAfterSearchBar() {
+        waitFor(checkProductAfterSearchBar);
+        return checkProductAfterSearchBar.containsText("Search Results for:");
+    }
+
 }

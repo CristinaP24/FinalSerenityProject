@@ -74,9 +74,6 @@ public class ShopSteps extends ScenarioSteps {
     }
 
     @Step
-    public void clickOn1stPageButton (){
-        shopPage.clickOn1stPageButton();
-    }
-
+    public void checkProductAfterSearchBar (){Assert.assertTrue(shopPage.checkProductAfterSearchBar());}
 
 }
