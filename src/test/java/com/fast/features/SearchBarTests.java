@@ -16,7 +16,9 @@ public class SearchBarTests {
     private WebDriver driver;
     @Steps
     SearchBarSteps searchBarSteps;
+    @Steps
     ShopSteps shopSteps;
+    @Steps
     CartSteps cartSteps;
 
     @Test
@@ -40,7 +42,10 @@ public class SearchBarTests {
         searchBarSteps.enterSearchTermLength();
         searchBarSteps.clickSearchBarButton();
         searchBarSteps.checkMessageSearchBar();
+        searchBarSteps.clearSearchBarField();
         searchBarSteps.clickSearchAgainButton(); //ce e cu butonul
+
+
 
     }
 

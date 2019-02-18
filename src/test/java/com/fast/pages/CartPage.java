@@ -116,8 +116,6 @@ public class CartPage extends PageObject {
         int subtotal = priceX * qtyBoxConvert;
 
         if ((subtotal==priceZ)&&(priceY==subtotal)&&(priceZ==priceY)){
-            System.out.println("Mergi, mai!");
-            //clickOn(proceedToCheckoutButton);
         }
    }
    public void removeProductFromCart (){

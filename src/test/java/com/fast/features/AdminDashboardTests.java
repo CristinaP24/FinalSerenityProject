@@ -17,6 +17,7 @@ public class AdminDashboardTests {
 
     @Steps
     AdminDashboardSteps adminDashboardSteps;
+    @Steps
     HomePage homePage;
 
     @Test

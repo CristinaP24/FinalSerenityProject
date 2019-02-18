@@ -12,38 +12,41 @@ import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityRunner.class)
 
-public class ShopTests  {
+public class ShopTests {
     @Managed(uniqueSession = true)
     private WebDriver driver;
-@Steps
+    @Steps
     ShopSteps shopSteps;
-    CartSteps cartSteps;
+    @Steps
+    CartSteps cartSteps; // daca nu pui @steps inainte, nu ti-l initializeaza, si de-aia ai eroarea: NullPointerException
 
 
-@Test
-public void selectBeltForList (){
-    shopSteps.validLogin();
-    shopSteps.clickOnShopButtonMainMenu();
-    shopSteps.selectBeltForProduct();
+    @Test
+    public void selectBeltForList() {
+        shopSteps.validLogin();
+        shopSteps.clickOnShopButtonMainMenu();
+        shopSteps.selectBeltForProduct();
 
-}
-@Test
-    public void selectHoodieElseProduct (){
-    shopSteps.validLogin();
-    shopSteps.clickOnShopButtonMainMenu();
-    shopSteps.clickOn1stPageButton();
-    shopSteps.selectHoodieElseProduct();
-    shopSteps.addToCartButtonPageProduct();
-    shopSteps.shoppingCartIcon();
-    cartSteps.removeProductFromCart();
-    cartSteps.removeProductCartConfirm();
-}
-@Test
-    public void selectCapElseIfProduct (){
-    shopSteps.validLogin();
-    shopSteps.clickOnShopButtonMainMenu();
-    shopSteps.selectCapElseIfProduct();
-}
+    }
+
+    @Test
+    public void selectHoodieElseProduct() {
+        shopSteps.validLogin();
+        shopSteps.clickOnShopButtonMainMenu();
+        shopSteps.clickOn1stPageButton();
+        shopSteps.selectHoodieElseProduct();
+        shopSteps.addToCartButtonPageProduct();
+        shopSteps.shoppingCartIcon();
+        cartSteps.removeProductFromCart();
+        cartSteps.removeProductCartConfirm();
+    }
+
+    @Test
+    public void selectCapElseIfProduct() {
+        shopSteps.validLogin();
+        shopSteps.clickOnShopButtonMainMenu();
+        shopSteps.selectCapElseIfProduct();
+    }
 
 }
 

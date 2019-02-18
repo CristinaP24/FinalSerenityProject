@@ -20,6 +20,7 @@ public class CartTests {
 
     @Steps
     CartSteps cartSteps;
+    @Steps
     ShopSteps shopSteps;
 
 
@@ -49,6 +50,7 @@ public class CartTests {
         cartSteps.click3QtyBox();
         cartSteps.clickAddToCartButton();
         cartSteps.checkoutHomePageButton();
+        cartSteps.viewShoppingCartButton();
         cartSteps.checkQtyCartIf();
         cartSteps.proceedToCheckoutButton();
 

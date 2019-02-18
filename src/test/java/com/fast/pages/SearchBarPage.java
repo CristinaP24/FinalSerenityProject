@@ -18,6 +18,9 @@ public class SearchBarPage extends PageObject {
     @FindBy(css = "input[type='search']")
     private WebElementFacade enterInSearchBarField;
 
+    @FindBy (css = " .search-block form[role*='search']     ")
+    private WebElementFacade lateralSearchBarField;
+
     @FindBy(css = ".search-submit")
     private WebElementFacade clickSearchBarButton;
 
@@ -27,7 +30,7 @@ public class SearchBarPage extends PageObject {
     @FindBy(id = "#primary h1")
     private WebElementFacade searchResultsFoundMessage;
 
-    @FindBy (css = " no-results-btn search-btn")
+    @FindBy (css = " button no-results-btn")
     private WebElementFacade searchAgainButton;
 
     private String searchTermLength = RandomStringUtils.randomAlphabetic(30);
@@ -69,11 +72,17 @@ public class SearchBarPage extends PageObject {
           String listA = listSearchTerms.get(5);
                 typeInto(enterInSearchBarField, listA);
     }
+
+    public void clearSearchBarField () {
+        (lateralSearchBarField).waitUntilClickable();
+        //clickOn(lateralSearchBarField);
+       typeInto(lateralSearchBarField, "cap");
+    }
     public void clickSearchAgainButton (){
         clickOn(searchAgainButton);
         waitFor(searchAgainButton);
-        typeInto(searchAgainButton,"Belt is always here for me.");
-
+        clickOn(searchAgainButton);
+        //typeInto(searchAgainButton,"Belt is always here for me.");
     }
 }
 

@@ -52,5 +52,6 @@ public class SearchBarSteps extends ScenarioSteps {
     @Step
     public void clickSearchAgainButton (){searchBarPage.clickSearchAgainButton();}
 
-
+    @Step
+    public void clearSearchBarField (){searchBarPage.clearSearchBarField();}
 }
